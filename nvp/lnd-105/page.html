@@ -2,7 +2,7 @@
 <html lang="en"><head><meta charset="utf-8"><meta name="ce-template" content="article-offer"><meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="robots" content="noindex, nofollow"><title>The Side-Mirror Glare Trap | Night Driving With Prescription Glasses</title>
 <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Poppins:wght@600;700;800&family=Playfair+Display:wght@700;800&family=Lato:wght@400;700&display=swap" rel="stylesheet">
 <style>
 :root{--navy:#14171c;--blue:#e08a00;--btn:#e08a00;--btn-d:#a96500;--ink:#1f2633;--muted:#5d6676;--shade:#f2f6fc;--line:#d6e2f3}
 *{box-sizing:border-box}body{margin:0;background:#fff;color:var(--ink);font:18px/1.6 Lato,Arial,sans-serif}
@@ -16,6 +16,7 @@ h1{font:800 27px/1.2 Poppins,"Segoe UI",Arial,sans-serif;color:var(--navy);margi
 mark.hl{background:#fff1a6;color:inherit;padding:0 3px;border-radius:2px;-webkit-box-decoration-break:clone;box-decoration-break:clone}
 a.piclink,figure.pic{display:block;margin:0 0 14px}a.piclink img,figure.pic img{display:block;width:100%;height:auto;border-radius:8px}
 p{margin:0 0 14px}
+p.key{font:800 23px/1.3 Poppins,Arial,sans-serif;color:var(--navy);margin:18px 0 16px}p.key mark.hl{padding:0 4px}
 h2{font:800 23px/1.25 Poppins,Arial,sans-serif;color:var(--navy);margin:34px 0 12px;display:flex;gap:10px;align-items:flex-start}
 h2 .n{flex:0 0 36px;height:36px;border-radius:50%;background:var(--blue);color:#fff;font-size:19px;line-height:36px;text-align:center}
 ul.dots,ul.checks{list-style:none;padding:0;margin:0 0 16px}
@@ -79,43 +80,63 @@ figure.pic figcaption{font-size:12px;color:var(--muted);margin-top:4px}
 .tbl.stack td+td::before{content:attr(data-label);display:block;font-size:12px;font-weight:700;letter-spacing:.03em;text-transform:uppercase;color:var(--muted)}}
 footer{margin-top:50px;font-size:12px;color:#666;text-align:center}footer a{color:#336;margin:0 6px}
 @media(min-width:640px){h1{font-size:34px}}
-body{font-family:Inter,Arial,sans-serif}h1,h2,h3.sub3,a.cta.go,a.cta.go2{font-family:Inter,Arial,sans-serif!important}h1{font-size:30px}@media(min-width:640px){h1{font-size:36px}}h2{font-size:25px}h3.sub3{font-size:20px}</style>
+/* news-article look (spec "news", Chad 2026-11-23 5:38pm MT: "make ours look a little more like ... an article"): our own
+   publication name as a masthead, section label, serif headline, desk byline row, product card in the sidebar on desktop */
+.mast{border-bottom:1px solid #d9d9d9;padding:12px 16px 10px;text-align:center}.mast .name{font:700 25px/1.1 "Playfair Display",Georgia,serif;color:var(--navy);letter-spacing:.01em}
+.mast .tag{font:600 10.5px/1.4 Inter,Arial,sans-serif;letter-spacing:.14em;text-transform:uppercase;color:var(--muted);margin-top:3px}
+.news .kicker{font:700 12px/1 Inter,Arial,sans-serif;letter-spacing:.14em;color:var(--blue);margin:20px 0 10px}
+.news h1{font-family:"Playfair Display",Georgia,serif!important;font-weight:800;color:#111}.news h1 .b{color:#111;display:inline}
+.news h1 .b mark.hl{padding:0 3px}
+.byline{display:flex;align-items:center;gap:10px;margin:4px 0 14px;padding:10px 0;border-top:1px solid #e6e6e6;border-bottom:1px solid #e6e6e6;font-size:13.5px;color:var(--muted);line-height:1.35}
+.byline .av{flex:0 0 34px;height:34px;border-radius:50%;background:var(--navy);color:#fff;font:700 14px/34px Inter,Arial,sans-serif;text-align:center}
+.byline b{color:var(--ink)}
+.layout{max-width:640px;margin:0 auto}aside.buy{display:none}
+@media(min-width:1000px){.layout.has-aside{max-width:1010px;display:grid;grid-template-columns:minmax(0,640px) 300px;gap:40px;justify-content:center}
+.layout.has-aside article{margin:0;padding-left:0;padding-right:0}
+aside.buy{display:block;position:sticky;top:20px;align-self:start;margin-top:24px;border:1px solid #e3e3e3;border-radius:12px;padding:14px;font-size:15px;line-height:1.4;background:#fff;box-shadow:0 2px 12px rgba(0,0,0,.06)}
+aside.buy .badge{display:inline-block;background:var(--blue);color:#fff;font:700 11px/1 Inter,Arial,sans-serif;letter-spacing:.08em;text-transform:uppercase;padding:5px 8px;border-radius:999px;margin:0 0 8px}
+aside.buy img{display:block;width:100%;border-radius:8px;margin:0 0 10px}aside.buy h3{font:800 19px/1.25 Inter,Arial,sans-serif;margin:0 0 8px;color:var(--navy)}
+aside.buy ul.checks{margin:0 0 10px}aside.buy ul.checks li{margin:0 0 5px;padding-left:24px}aside.buy .price{font:700 15px/1.35 Inter,Arial,sans-serif;margin:0 0 10px}
+aside.buy a.cta.go{margin:0;font-size:17px;padding:13px 8px}}
+body{font-family:Inter,Arial,sans-serif}h1,h2,h3.sub3,p.key,a.cta.go,a.cta.go2{font-family:Inter,Arial,sans-serif!important}h1{font-size:30px}@media(min-width:640px){h1{font-size:36px}}h2{font-size:25px}h3.sub3{font-size:20px}</style>
 <!-- Microsoft Clarity (scroll depth, clicks); disclosed on /privacy -->
 <script>(function(c,l,a,r,i,t,y){c[a]=c[a]||function(){(c[a].q=c[a].q||[]).push(arguments)};t=l.createElement(r);t.async=1;t.src="https://www.clarity.ms/tag/"+i;y=l.getElementsByTagName(r)[0];y.parentNode.insertBefore(t,y);})(window, document, "clarity", "script", "z0v09iw62c");clarity("set", "lander", "l105");</script>
 
 <script>!function(f,b,e,v,n,t,s){if(f.fbq)return;n=f.fbq=function(){n.callMethod?n.callMethod.apply(n,arguments):n.queue.push(arguments)};if(!f._fbq)f._fbq=n;n.push=n;n.loaded=!0;n.version='2.0';n.queue=[];t=b.createElement(e);t.async=!0;t.src=v;s=b.getElementsByTagName(e)[0];s.parentNode.insertBefore(t,s)}(window,document,'script','https://connect.facebook.net/en_US/fbevents.js');fbq.disablePushState=true;fbq('init','2419400022254353');fbq('track','PageView');</script>
 <script>/* OfferClick: the tap from this page to the offer (Meta optimizes on it while lead postbacks are off) */(function(){var last=0;function send(){var n=Date.now();if(n-last<1500)return;last=n;try{fbq('trackCustom','OfferClick');}catch(x){}}function pick(e){return e.target&&e.target.closest&&e.target.closest('a[href^="https://trynightvisionpro.com/checkout/"]');}function ready(){return !!(window.fbq&&window.fbq.callMethod);}document.addEventListener('click',function(e){var a=pick(e);if(!a)return;send();if(e.defaultPrevented||e.ctrlKey||e.metaKey||e.shiftKey||a.target==='_blank')return;e.preventDefault();if(a.className.indexOf('going')<0)a.className+=' going';var h=a.href,t0=Date.now(),seen=0;(function wait(){var n=Date.now();if(!seen&&ready())seen=n;if((seen&&n-seen>=300&&n-t0>=600)||n-t0>=2500){location.href=h;return;}setTimeout(wait,100);})();},true);})();</script>
 </head>
-<body data-lander="l105">
+<body data-lander="l105" class="news">
 <div class="adrow">Advertisement</div>
 <div class="topband"></div>
+<header class="mast"><div class="name">Simple Daily Upgrade</div><div class="tag">Small fixes for everyday life</div></header>
+<div class="layout has-aside">
 <article>
-<p class="kicker"></p>
+<p class="kicker">Night Driving</p>
 <h1>The Side-Mirror Glare Trap: <span class="b">Why Modern Truck Headlights Blind Drivers Wearing Prescription Glasses (And What Actually Solves It)</span></h1>
-<p class="date">Updated <span data-date="month_year">November 2026</span> &middot; 5 min read</p>
+<div class="byline"><span class="av">SD</span><span>By <b>the Simple Daily Upgrade editors</b><br>Updated <span data-date="month_year">November 2026</span> &middot; 5 min read</span></div>
 <p class="dek">Tall trucks light up side mirrors like stadium spotlights. Clear prescription lenses reflect that glare straight off the inside glass, and yellow clip-ons fail.<br><b>Here is how polarized amber fit-overs seal the side gaps and cut through blinding LED glare.</b></p>
-<figure class="pic"><img src="https://static.ll-assets.com/variants/unpublished/2213520765553b0540f64ff9a728422a/img-c/hero.jpg" width="900" height="600" fetchpriority="high" alt="A driver at night wearing amber fit-over glasses while a truck&#x27;s headlights blaze in his side mirror"></figure>
+<figure class="pic"><img src="https://static.ll-assets.com/variants/unpublished/2213520765553b0540f64ff9a728422a/img-c/hero2.jpg" width="900" height="600" fetchpriority="high" alt="A driver at night wearing amber fit-over glasses while a truck&#x27;s headlights blaze in his side mirror"></figure>
 
 <p>You are stopped at a red light or cruising in the right lane after dark.</p>
 <p>A tall pickup truck or full-size SUV pulls up directly behind your bumper.</p>
 <p>Suddenly, both of your side mirrors light up like stadium spotlights.</p>
-<p><b>If you wear everyday prescription glasses, the glare hits twice as hard.</b></p>
+<p class="key">If you wear everyday prescription glasses, the glare hits twice as hard.</p>
 <p>Clear eyewear leaves the temples completely open.</p>
 <p>Harsh LED beams blast past the edge of your frames, bounce off the back surface of your clear lenses, and reflect straight into your eyes.</p>
 <p>Squinting does not stop it.</p>
 <p>Cheap drugstore clip-ons slip crooked, scratch your expensive prescription lenses, and leave the exact same side gaps wide open.</p>
 <p>Here is the truth:</p>
-<p><b><mark class="hl">It is not your eyes. It is the side-mirror glare trap.</mark></b></p>
+<p class="key"><mark class="hl">It is not your eyes. It is the side-mirror glare trap.</mark></p>
 <p>Modern high-output headlights are up to 6x brighter than halogen bulbs.</p>
 <p>When combined with tall truck bumpers and standard open-frame eyewear, they create a blinding double reflection that makes night driving exhausting.</p>
 <h2><span>The “Double Reflection” Trap: Why Prescription Glasses Make Side Glare Worse</span></h2>
 <figure class="pic"><img src="https://static.ll-assets.com/variants/unpublished/2213520765553b0540f64ff9a728422a/img-c/double-reflection.jpg" width="900" height="600" loading="lazy" alt="Side mirror glare reflecting on the inside of a driver&#x27;s clear prescription glasses at night"></figure>
 <p>If you drive a sedan, a hatchback, a crossover, or any standard-height vehicle, a truck's headlights sit at the exact eye level of your side-view and rear-view mirrors.</p>
 <p>That height difference creates an optical problem that clear prescription lenses were never designed to handle:</p>
-<p><b>The double-reflection glare trap.</b></p>
+<p class="key">The double-reflection glare trap.</p>
 <p>Here is how it happens every evening:</p>
 <ol class="steps"><li>High-intensity LED beams from a trailing truck bounce off your exterior driver-side mirror straight toward your face.</li><li>Everyday prescription glasses have flat frames with zero side protection, so that light slips right past the open edge of your frames.</li><li>The beam strikes the inside of your clear lens and bounces straight into your eyes.</li></ol>
-<p><b><mark class="hl">You are dealing with a secondary glare reflection trapped right inside your own eyewear.</mark></b></p>
+<p class="key"><mark class="hl">You are dealing with a secondary glare reflection trapped right inside your own eyewear.</mark></p>
 <p>As long as that truck sits behind you or rides in your blind spot, high-energy blue-white light keeps burning in your peripheral vision.</p>
 <p>Your eyes stay tense, your temples ache from squinting, and your focus gets pulled away from the road ahead.</p>
 <h2><span>The Drugstore Clip-On Failure: Why Flimsy Yellow Lenses Make Things Worse</span></h2>
@@ -132,7 +153,7 @@ body{font-family:Inter,Arial,sans-serif}h1,h2,h3.sub3,a.cta.go,a.cta.go2{font-fa
 <h3 class="sub3">3. Yellow dye was made for halogen bulbs, not automotive LEDs.</h3>
 <p>Traditional yellow tint was developed decades ago for soft, warm-spectrum halogen lighting. Modern vehicle LEDs emit a cool, high-energy blue-white spike.</p>
 <p>Basic yellow plastic cannot filter that harsh wavelength.</p>
-<p><b>It simply turns blinding white glare into blinding yellow glare.</b></p>
+<p class="key">It simply turns blinding white glare into blinding yellow glare.</p>
 <h3 class="sub3">4. Non-polarized plastic darkens the pavement.</h3>
 <p>Cheap tinted lenses reduce overall light transmission without optical polarization. While oncoming headlights stay uncomfortably bright, the dark road ahead becomes even harder to see.</p>
 <p>Lane markings, dark asphalt edges, and road signs fade into murky shadows.</p>
@@ -146,7 +167,7 @@ body{font-family:Inter,Arial,sans-serif}h1,h2,h3.sub3,a.cta.go,a.cta.go2{font-fa
 <h3 class="sub3">1. 150mm Wraparound Frame (Stops Mirror Glare at the Source)</h3>
 <p>Night Vision Pro has a 150mm wraparound frame. It wraps around the sides of your face, between your eyes and your vehicle's mirrors.</p>
 <p>When a tall truck pulls up behind you, the blinding peripheral light is blocked before it can reach the open space behind your prescription glasses.</p>
-<p><b>No light sneaking in from the side means zero double reflection off the inside of your clear lenses.</b></p>
+<p class="key">No light sneaking in from the side means zero double reflection off the inside of your clear lenses.</p>
 <h3 class="sub3">2. Tri-Acetate Cellulose (TAC) Polarized Filtration</h3>
 <p>Unlike ordinary tinted plastic that merely dims incoming light, Night Vision Pro uses a dedicated TAC polarized core.</p>
 <p>Polarization acts like a microscopic window blind. It filters out horizontal scattered light waves bouncing off slick wet pavement, puddles, road spray, and oncoming windshields.</p>
@@ -214,6 +235,8 @@ body{font-family:Inter,Arial,sans-serif}h1,h2,h3.sub3,a.cta.go,a.cta.go2{font-fa
   <p class="legal"><a href="https://www.simpledailyupgrade.com/privacy">Privacy</a> &middot; <a href="https://www.simpledailyupgrade.com/terms">Terms</a> &middot; <a href="https://www.simpledailyupgrade.com/contact">Contact</a></p>
 </footer>
 </article>
+<aside class="buy"><span class="badge">Black Friday</span><img src="https://static.ll-assets.com/variants/unpublished/2213520765553b0540f64ff9a728422a/img-c/fit-over.jpg" alt="Night Vision Pro amber fit-over glasses worn over prescription frames" loading="lazy"><h3>Night Vision Pro Fit-Over Glasses</h3><ul class="checks"><li>Fits over most prescription frames</li><li>Polarized amber lenses</li><li>Seals the side gaps</li><li>60-day money-back guarantee</li></ul><p class="price">Up to 50% off. Free shipping on 2+ pairs.</p><a class="cta go" href="https://trynightvisionpro.com/checkout/">Check Today's Deal &raquo;</a></aside>
+</div>
 <script>/* question step: the offer button unlocks once every question has an answer and none says stop */
 (function(){var G=document.getElementById('check');if(!G)return;var Q=G.querySelectorAll('.qq'),B=G.querySelector('a.cta.go2'),L=G.querySelector('.locked');
 function upd(){var all=true,stop='';for(var i=0;i<Q.length;i++){var on=Q[i].querySelector('.opt.on');if(!on)all=false;else if(on.getAttribute('data-stop'))stop=1;}
