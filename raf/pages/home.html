@@ -1,0 +1,679 @@
+<!doctype html>
+<html lang="en"><head><meta charset="utf-8">
+<title>Roofer Ad Funnels</title>
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&family=JetBrains+Mono:wght@400;600&display=swap">
+<style>
+/* Structure: Hyros (outcome hero, animated product windows with one benefit line each, numbers band, guarantee box, pick-your-model tabs, offer banner)
+   + CreatStrat (free ad form, reason behind every ad, "your week now" vs with us) + Designjoy (3 steps, small call link, founder-run) + Bid Mailers (4 questions, plain-English deal). */
+:root{--ink:#111726;--muted:#5a6476;--line:#dfe3ea;--bg:#f6f7f9;--card:#fff;--accent:#f26b1d;--accent2:#ffe6d6;--navy:#0e1a2c;--grid:rgba(17,23,38,.05);--mono:"JetBrains Mono",ui-monospace,monospace;--ok:#1f9d55}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--ink:#e8ecf3;--muted:#a3adbd;--line:#283244;--bg:#0d121a;--card:#141b27;--accent2:#3a2416;--grid:rgba(255,255,255,.04);color-scheme:dark}}
+:root[data-theme="dark"]{--ink:#e8ecf3;--muted:#a3adbd;--line:#283244;--bg:#0d121a;--card:#141b27;--accent2:#3a2416;--grid:rgba(255,255,255,.04);color-scheme:dark}
+*{box-sizing:border-box}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.55;
+ background-image:linear-gradient(var(--grid) 1px,transparent 1px),linear-gradient(90deg,var(--grid) 1px,transparent 1px);background-size:32px 32px}
+.wrap{max-width:1080px;margin:0 auto;padding:0 16px}
+.demo{background:#fff3cd;color:#5c4400;font-size:13px;text-align:center;padding:6px 16px}
+.banner{background:var(--accent);color:#fff;text-align:center;padding:9px 16px;font-size:14px;font-weight:600}
+.banner b{font-family:var(--mono);background:rgba(0,0,0,.18);padding:2px 8px;border-radius:5px;margin-left:6px;white-space:nowrap}
+nav{display:flex;justify-content:space-between;align-items:center;padding:14px 0}
+.logo{font-weight:800;font-size:19px}.logo span{color:var(--accent)}
+.mono{font-family:var(--mono);font-size:12px;letter-spacing:.06em;text-transform:uppercase;color:var(--muted)}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:8px;background:var(--ink);color:var(--bg);font-weight:800;text-decoration:none;border-radius:10px;padding:14px 20px;font-size:16px;border:2px solid var(--ink);cursor:pointer;font-family:inherit}
+.btn.or{background:var(--accent);border-color:var(--accent);color:#fff}
+.btn.ghost{background:transparent;color:var(--ink)}
+.btn.sm{padding:8px 13px;font-size:14px}
+h1{font-size:clamp(40px,8.5vw,72px);line-height:1.02;letter-spacing:-.035em;margin:14px 0 14px;font-weight:800}
+.hero h1{font-size:clamp(34px,7vw,58px);max-width:18ch;margin-left:auto;margin-right:auto}
+.topics{display:grid!important;grid-template-columns:repeat(2,max-content);justify-content:center;text-align:left;gap:10px 26px!important;margin:18px auto 22px!important;font-size:16px}
+@media (min-width:760px){.topics{grid-template-columns:repeat(3,max-content);font-size:17px}}
+.topics+.lede{margin-top:0}
+h1 .hk,h2 .hk{color:var(--accent);background:linear-gradient(transparent 82%,color-mix(in srgb,var(--accent) 28%,transparent) 82%)}
+h1 .hl,h2 .hl{background:var(--accent);color:#fff;padding:0 .12em;border-radius:6px;box-decoration-break:clone;-webkit-box-decoration-break:clone}
+h2{font-size:clamp(30px,5.5vw,46px);line-height:1.08;letter-spacing:-.025em;margin:8px 0 12px;font-weight:800}
+h3{font-size:19px;margin:0 0 6px}
+p{margin:0 0 12px}
+.lede{font-size:19px;color:var(--muted);max-width:44ch}
+.key{font-weight:800}
+section{padding:52px 0}
+.center{text-align:center}.center .lede{margin-left:auto;margin-right:auto}
+/* hero */
+.hero{display:grid;gap:30px;padding:22px 0 30px}
+.free{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:16px;margin-top:20px;max-width:460px;box-shadow:0 12px 30px rgba(17,23,38,.08)}
+.free label{display:block;font-size:13px;font-weight:600;margin:0 0 4px}
+.free input{width:100%;font:inherit;font-size:16px;padding:12px;border:1px solid var(--line);border-radius:8px;margin-bottom:10px;background:var(--bg);color:var(--ink)}
+.free .btn{width:100%}
+.free .small{font-size:13px;color:var(--muted);margin:10px 0 0}
+.done{display:none;font-weight:800;color:var(--ok);margin:8px 0 0}
+.alt{margin-top:14px;font-size:15px}.alt a{color:var(--ink);font-weight:700}
+/* windows */
+.win{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden;box-shadow:0 16px 40px rgba(17,23,38,.10)}
+.bar{display:flex;align-items:center;gap:6px;padding:9px 12px;border-bottom:1px solid var(--line);font-family:var(--mono);font-size:12px;color:var(--muted)}
+.bar i{width:9px;height:9px;border-radius:50%;background:var(--line);display:inline-block}
+.bar span{margin-left:8px}
+.body{padding:14px}
+.cap{margin:14px 2px 0;font-size:17px}.cap b{color:var(--accent)}
+.rows{display:grid;gap:8px;font-family:var(--mono);font-size:13px}
+.r{display:grid;grid-template-columns:1fr auto 22px;gap:10px;align-items:center;padding:9px 10px;border:1px solid var(--line);border-radius:8px;opacity:0;animation:in 9s infinite}
+.r .d{color:var(--muted)}.r .c{color:var(--ok);font-weight:800}
+.r:nth-child(1){animation-delay:.2s}.r:nth-child(2){animation-delay:.8s}.r:nth-child(3){animation-delay:1.4s}.r:nth-child(4){animation-delay:2s}.r:nth-child(5){animation-delay:2.6s}
+.r.x{color:var(--muted)}.r.x .c{color:#c2453b}
+@keyframes in{0%{opacity:0;transform:translateY(6px)}6%,88%{opacity:1;transform:none}100%{opacity:0}}
+.scan{height:3px;background:linear-gradient(90deg,transparent,var(--accent),transparent);background-size:40% 100%;background-repeat:no-repeat;animation:sc 2.2s linear infinite;margin-bottom:12px;border-radius:2px}
+@keyframes sc{0%{background-position:-40% 0}100%{background-position:140% 0}}
+.morph{position:relative;aspect-ratio:4/5;border-radius:8px;overflow:hidden;max-width:320px;margin:0 auto}
+.morph img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.morph .to{animation:mo 7s infinite}
+.morph .lab{position:absolute;left:8px;top:8px;font-family:var(--mono);font-size:11px;background:rgba(0,0,0,.65);color:#fff;padding:3px 7px;border-radius:5px}
+.morph .lab.b{animation:mo 7s infinite}.morph .lab.a{animation:mo2 7s infinite}
+@keyframes mo{0%,38%{opacity:0}50%,92%{opacity:1}100%{opacity:0}}
+@keyframes mo2{0%,38%{opacity:1}50%,92%{opacity:0}100%{opacity:1}}
+.why{display:grid;grid-template-columns:96px minmax(0,1fr);gap:12px;align-items:start}.why>div{min-width:0}
+.why img{width:96px;border-radius:6px;display:block}
+.tagline{overflow:hidden;font-family:var(--mono);font-size:12px;border:1px dashed var(--accent);color:var(--accent);border-radius:6px;padding:8px 10px;line-height:1.5}
+.typing{overflow:hidden;white-space:nowrap;border-right:2px solid var(--accent);animation:ty 6s steps(40) infinite;max-width:100%}
+@keyframes ty{0%{width:0}45%,90%{width:100%}100%{width:100%}}
+.phone{max-width:250px;margin:0 auto;border:8px solid var(--navy);border-radius:26px;overflow:hidden;background:#fff;color:#111;position:relative}
+.phone .q{padding:14px 12px;text-align:center;font-size:13px;font-weight:800}
+.phone .tiles{display:grid;grid-template-columns:1fr 1fr;gap:8px;padding:0 12px 14px}
+.phone .tiles div{border:1px solid #e3e5ea;border-radius:6px;font-size:11px;font-weight:800;text-align:center;overflow:hidden}
+.phone .tiles div span{display:block;font-size:24px;padding:8px 0}
+.phone .tiles div em{display:block;font-style:normal;background:#3d3f45;color:#fff;padding:6px 2px}
+.phone .tiles div:first-child em{animation:tap 6s infinite}
+@keyframes tap{0%,30%{background:#3d3f45}36%,100%{background:var(--accent)}}
+.phone .step{background:#0d0e10;color:#fff;font-size:11px;text-align:center;padding:8px}
+.note{position:absolute;left:8px;right:8px;top:8px;background:#fff;border:1px solid #e3e5ea;border-radius:12px;padding:9px 10px;font-size:11px;box-shadow:0 8px 20px rgba(0,0,0,.18);animation:nt 6s infinite;opacity:0}
+.note b{display:block;font-size:12px}
+@keyframes nt{0%,55%{opacity:0;transform:translateY(-10px)}62%,92%{opacity:1;transform:none}100%{opacity:0}}
+.wins{display:grid;gap:28px;margin-top:30px}
+/* pain */
+.dark{background:var(--navy);color:#fff}
+.dark .mono{color:#9fb0c9}.dark .lede{color:#c6d0de}
+.weeks{display:grid;gap:14px;margin-top:26px}
+.wk{border:1px solid #2b3d58;border-radius:12px;padding:16px;background:#12223a}
+.wk.us{border-color:var(--accent)}
+.wk ul{list-style:none;margin:8px 0 0;padding:0;display:grid;gap:8px;font-size:15px;color:#d7deea}
+.wk li{display:grid;grid-template-columns:22px 1fr}
+.wk.now li::before{content:"✕";color:#ff7a6b;font-weight:800}
+.wk.us li::before{content:"✓";color:var(--accent);font-weight:800}
+/* formats */
+.grid3{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:24px;text-align:left}
+.ex{background:var(--card);border:1px solid var(--line);border-radius:12px;overflow:hidden}
+.ex img{width:100%;display:block}
+.ex div{padding:10px 12px;font-size:14px}
+.ex b{display:block;font-size:15px}
+.ex .m{font-family:var(--mono);font-size:11px;color:var(--accent);margin-top:4px;display:block}
+/* numbers */
+.nums{display:grid;grid-template-columns:1fr 1fr;gap:12px;margin-top:24px}
+.num{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;position:relative}
+.num .v{font-size:40px;font-weight:800;line-height:1.05;margin:8px 0 4px}
+.num .t{font-size:14px;color:var(--muted)}
+.num .gauge{height:8px;border-radius:4px;background:var(--line);margin-top:12px;overflow:hidden}
+.num .gauge i{display:block;height:100%;background:var(--accent);width:0;animation:gg 2.4s ease-out forwards}
+@keyframes gg{to{width:var(--w)}}
+.num .t,.num .no{text-wrap:balance}
+#packs.band{padding-top:44px}#packs .center h2{margin:0}.packsub{color:var(--muted);font-size:16px;margin:10px 0 40px}.tiers.t2{max-width:780px}@media (min-width:860px){.tiers.t2{grid-template-columns:repeat(2,1fr)}}.addon{font-size:13.5px;color:var(--muted);margin:auto 0 12px;text-wrap:balance}
+@supports (grid-template-rows:subgrid){#how + section .num{display:grid;grid-template-rows:subgrid;grid-row:span 4;row-gap:0;align-content:start}#how + section .num>*{align-self:start}}.num .no{margin-top:14px;padding-top:12px;border-top:1px solid var(--line);font-size:13.5px;color:var(--muted);display:flex;gap:6px;justify-content:center;text-align:left}.num .no::before{content:"\2715";color:#ff7a6b;font-weight:800}.num.hot .no{border-color:rgba(255,255,255,.35);color:#ffe7da}.num.hot .no::before{color:#fff}
+.num.hot{background:var(--accent);color:#fff;border-color:var(--accent)}.num.hot .t,.num.hot .mono{color:#ffe7da}.num.hot .gauge{background:rgba(255,255,255,.3)}.num.hot .gauge i{background:#fff}
+/* steps */
+.steps{display:grid;gap:12px;margin-top:24px}
+.st{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:18px}
+.st .mono{color:var(--accent)}
+/* qa */
+.qa{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;margin-top:24px}
+.qa .row{display:grid;grid-template-columns:44px 1fr;gap:6px;padding:18px;border-bottom:1px solid var(--line)}
+.qa .row:last-child{border-bottom:none}
+.qa .n{font-family:var(--mono);color:var(--accent);font-weight:600}
+/* tiers */
+.tiers{display:grid;gap:14px;margin-top:26px}
+.tier{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px 20px;display:flex;flex-direction:column;position:relative}
+.tier.pop{border:2px solid var(--accent)}
+.badge{position:absolute;top:-12px;left:20px;background:var(--accent);color:#fff;font-size:12px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;padding:4px 10px;border-radius:6px}
+.price{font-size:44px;font-weight:800;line-height:1.1;margin-top:6px}
+.price s{font-size:20px;color:var(--muted);font-weight:600;margin-left:6px}
+.per{font-size:14px;color:var(--muted);margin:0 0 10px}
+.tier ul{list-style:none;padding:0;margin:0 0 18px;display:grid;gap:9px;font-size:15px;flex:1}
+.tier li{display:grid;grid-template-columns:22px 1fr}
+.tier li::before{content:"✓";color:var(--accent);font-weight:800}
+.guar{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:26px 20px;text-align:center;margin-top:16px}
+.guar h3{font-size:clamp(26px,5vw,36px);line-height:1.1;margin:8px 0}
+.guar h3 span{color:var(--accent)}
+.call{text-align:center;font-size:15px;color:var(--muted);margin-top:14px}.call a{color:var(--ink);font-weight:700}
+/* founder */
+.founder{background:var(--card);border:1px solid var(--line);border-radius:14px;padding:22px;max-width:680px;margin:0 auto}
+details{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px 18px;margin-top:10px}
+summary{font-weight:800;cursor:pointer}
+details p{margin:10px 0 0;color:var(--muted)}
+footer{border-top:1px solid var(--line);padding:26px 0 40px;font-size:14px;color:var(--muted);text-align:center}
+footer a{color:var(--muted)}
+@media (min-width:860px){.hero{grid-template-columns:1.05fr 1fr;align-items:center}.wins{grid-template-columns:1fr 1fr}.weeks{grid-template-columns:1fr 1fr}.nums{grid-template-columns:repeat(4,1fr)}.steps{grid-template-columns:repeat(3,1fr)}.tiers{grid-template-columns:repeat(3,1fr)}}
+@media (max-width:620px){.grid3{grid-template-columns:1fr 1fr}}
+@media (prefers-reduced-motion:reduce){*,*::before,*::after{animation:none!important}.r,.note{opacity:1}.morph .to{opacity:1}.morph .lab.a{opacity:0}.typing{border:none}.num .gauge i{width:var(--w)}}
+
+/* Centered flow (Chad 2026-11-26 7:23pm PT: "center alignment all the way through") */
+section,.hero{text-align:center}
+.wins{grid-template-columns:1fr!important;max-width:600px!important;gap:40px}
+.lede{margin-left:auto;margin-right:auto}
+.hero{grid-template-columns:1fr!important;max-width:760px;margin:0 auto;justify-items:center}
+.hero>div{width:100%}
+.free{margin:22px auto 0;text-align:center}
+.free input{text-align:center}
+.hero .win{max-width:560px;margin:0 auto;text-align:left}
+.cap{text-align:center;max-width:46ch;margin-left:auto;margin-right:auto}
+.win{text-align:left}
+.wk{text-align:center}.wk ul{display:inline-grid;text-align:left}
+.weeks,.nums,.steps,.tiers,.qa,.faq,.wins,.grid3{max-width:980px;margin-left:auto;margin-right:auto}
+.tier{align-items:center;text-align:center}.tier ul{display:inline-grid;text-align:left;flex:none;margin:0 auto 18px}.tier .btn{width:100%}
+.badge{left:50%;transform:translateX(-50%)}
+.qa{max-width:760px}.qa .row{grid-template-columns:1fr;text-align:center;gap:2px}
+.faq{max-width:760px}
+details{text-align:left}summary{list-style:none;display:grid;grid-template-columns:22px 1fr;align-items:start}summary::-webkit-details-marker{display:none}summary::before{content:"+";color:var(--accent);font-weight:800;font-size:19px;line-height:1.2}details[open] summary::before{content:"\2013"}details p{padding-left:22px}#faq .faq{margin-top:26px}
+.founder{text-align:center}
+.num{text-align:center}
+.grid3 .ex{text-align:center}
+/* Brand section (Chad 2026-11-26 7:25pm PT: custom to their branding, not generic) */
+.brandwrap{max-width:560px;margin:26px auto 0}
+.brands{position:relative;aspect-ratio:4/5;max-width:340px;margin:0 auto;border-radius:8px;overflow:hidden}
+.brands img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;opacity:0;animation:b3 9s infinite}
+.brands img:nth-child(1){opacity:1}.brands img:nth-child(2){animation-delay:-6s}.brands img:nth-child(3){animation-delay:-3s}
+@keyframes b3{0%,28%{opacity:1}36%,92%{opacity:0}100%{opacity:1}}
+.sw{display:flex;justify-content:center;flex-wrap:wrap;gap:14px;margin-top:12px;font-family:var(--mono);font-size:12px;color:var(--muted)}
+.sw span{display:inline-flex;align-items:center;gap:6px}.sw i{width:12px;height:12px;border-radius:3px;display:inline-block}
+.match{display:grid;grid-template-columns:repeat(auto-fit,minmax(160px,1fr));gap:10px;max-width:980px;margin:30px auto 0}
+.match>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:14px 12px;font-size:14px;color:var(--muted)}
+.match b{display:block;color:var(--ink);font-size:16px;margin-bottom:2px}
+.match .ic{display:block;color:var(--accent);font-size:22px;line-height:1;margin-bottom:6px}
+@media (min-width:700px){.match{grid-template-columns:repeat(3,1fr)}.match>div{padding:16px;font-size:15px}}
+.hint{font-weight:400;color:var(--muted);font-size:13px}
+@media (prefers-reduced-motion:reduce){.brands img{animation:none!important}}
+/* Rules pass 2026-11-26 8pm PT */
+.lpblock{max-width:560px;margin:40px auto 0}.lpblock h3{font-size:24px;margin:0 0 6px}
+.hero .lede{max-width:640px}
+.free .small{margin:4px auto 18px!important}
+.proof{list-style:none;padding:0;margin:4px auto 0;display:flex;flex-wrap:wrap;justify-content:center;gap:6px 18px;font-weight:600;font-size:15px}
+.proof li::before{content:"\2713";color:var(--accent);font-weight:800;margin-right:6px}
+.pair{display:grid;grid-template-columns:1fr 20px .6fr;align-items:center;gap:6px}
+.pair>img{width:100%;border-radius:8px;display:block}
+.pair .arw{color:var(--accent);font-weight:800;font-size:20px;text-align:center}
+.mini{border:5px solid var(--navy);border-radius:16px;overflow:hidden;background:#fff}.mini img{width:100%;display:block}
+/* Collage (Chad 2026-11-26 8:08pm PT: like Ugly Ads, 12 different roofing companies + styles) */
+.collage{columns:2;column-gap:8px;background:var(--accent);padding:8px;border-radius:14px;max-width:980px;margin:26px auto 0}
+@media (min-width:760px){.collage{columns:3;column-gap:12px;padding:12px}}
+.collage img{width:100%;display:block;margin:0 0 8px;border-radius:6px;break-inside:avoid}
+@media (min-width:760px){.collage img{margin-bottom:12px}}
+/* Feed cards (Chad 2026-11-26 8:05pm PT: "if there are only 6..."; "images dont specifically strike as good looking ads") */
+.feed{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px 10px;max-width:980px;margin:26px auto 0;text-align:left}
+@media (min-width:760px){.feed{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px 18px}}
+@media (min-width:1000px){.feed{grid-template-columns:repeat(4,minmax(0,1fr))}}
+.fb{background:#fff;color:#1c1e21;border:1px solid #dddfe2;border-radius:10px;overflow:hidden;box-shadow:0 6px 18px rgba(17,23,38,.08);font-family:system-ui,-apple-system,"Segoe UI",Roboto,sans-serif}
+.fbh{display:flex;gap:7px;align-items:center;padding:8px 9px 4px}
+.fbh .av{width:24px;height:24px;border-radius:50%;background:#142440;color:#fff;font-weight:800;font-size:12px;display:grid;place-items:center;flex:none}
+.fbh b{display:block;font-size:12px;line-height:1.2}.fbh span{display:block;font-size:10.5px;color:#65676b}
+.fbt{font-size:11.5px;line-height:1.35;margin:2px 9px 7px;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical;overflow:hidden}
+.fb img{width:100%;aspect-ratio:4/5;object-fit:cover;display:block}
+.fbf{display:flex;align-items:center;gap:6px;background:#f0f2f5;padding:7px 9px}
+.fbf div{min-width:0;flex:1}.fbf span{display:block;font-size:9.5px;color:#65676b;text-transform:uppercase;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.fbf b{font-size:11.5px;line-height:1.25;overflow:hidden;display:-webkit-box;-webkit-line-clamp:2;-webkit-box-orient:vertical}
+.fbf em{font-style:normal;font-size:10.5px;font-weight:700;background:#e4e6eb;border-radius:6px;padding:6px 7px;white-space:nowrap}
+.fbl{font-family:var(--mono);font-size:11px;color:var(--muted);text-align:center;margin-top:7px}.fbl b{color:var(--ink);font-weight:600}
+.note2{font-size:14px;color:var(--muted);margin:8px auto 0;max-width:60ch}
+@media (min-width:760px){.fbh b{font-size:13px}.fbt{font-size:13px}.fbf b{font-size:13px}.fbf em{font-size:12px}}
+/* Collage as Facebook posts (Chad 2026-11-26 8:18pm PT: "make them in the meta ads format.. strong headline text and a company brand and logo") */
+.collage .fb{text-align:left;break-inside:avoid;margin:0 0 8px;border:none;border-radius:8px;box-shadow:none}
+@media (min-width:760px){.collage .fb{margin-bottom:12px}}
+.collage .fb img{aspect-ratio:auto;margin:0;border-radius:0}
+.fbh{position:relative}.fbh .dots{position:absolute;right:9px;top:8px;color:#65676b;font-weight:800;letter-spacing:1px}
+.fbh .av{position:relative;width:30px;height:30px;overflow:hidden}
+.fbh .av svg{position:absolute;left:5px;top:2px;width:20px;height:12px}
+.fbh .av i{font-style:normal;font-size:9px;font-weight:800;position:absolute;left:0;right:0;bottom:5px;text-align:center;letter-spacing:.02em}
+.collage .fbf{padding:8px 9px;gap:8px}
+.collage .fbf b{font-size:13px;font-weight:800;line-height:1.22}
+.collage .fbf em{font-size:11px;padding:7px 8px}
+.collage .fbt{-webkit-line-clamp:3}
+@media (min-width:760px){.collage .fbf b{font-size:15.5px}.collage .fbt{font-size:13.5px}.fbh b{font-size:14px}.fbh .av{width:36px;height:36px}.fbh .av svg{left:7px;top:3px;width:22px;height:14px}.fbh .av i{font-size:10.5px;bottom:6px}}
+@media (max-width:759px){.collage .fbf{flex-direction:column;align-items:stretch;gap:6px}.collage .fbf b{-webkit-line-clamp:3}.collage .fbf em{text-align:center}}
+.fbh>div{padding-right:18px;min-width:0}
+/* Section bands (Chad 2026-11-26 8:35pm PT: "separate each section.. a different color with a frame", like Ugly Ads' color blocks) */
+:root{--p-cream:#fff3e8;--p-blue:#e9eff7;--p-orange:#dd5f1c;--p-navy:#0e1a2c}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--p-cream:#2a1d12;--p-blue:#0f2238;--p-navy:#18212f;--p-navy-line:#283244}}
+:root[data-theme="dark"]{--p-cream:#2a1d12;--p-blue:#0f2238;--p-navy:#18212f;--p-navy-line:#283244}
+/* Chad 9:01pm PT: solid sections in dark mode = the stone (slate) blue, not the lighter blue */
+.b-navy{border-color:var(--p-navy-line,#2a4670)!important}
+.band{margin:14px max(12px,calc((100% - 1240px)/2));border-radius:24px;border:1px solid var(--line);padding:56px 0;overflow:hidden}
+@media (max-width:700px){.band{margin:10px 8px;border-radius:18px;padding:40px 0}}
+.b-white{background:var(--card)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) .b-white{background:#18212f}}
+:root[data-theme="dark"] .b-white{background:#18212f}
+.b-cream{background:var(--p-cream);border-color:color-mix(in srgb,var(--accent) 22%,var(--line))}
+.b-blue{background:var(--p-blue)}
+.b-navy{background:var(--p-navy);color:#fff;border-color:#2a4670}
+.b-navy .free{color:var(--ink)}
+.b-navy .lede,.b-navy .proof{color:#d3dbe7}.b-navy .lede b{color:#fff}.b-navy .mono{color:#9fb0c9}
+.b-navy .alt{color:#c6d0de}.b-navy .alt a{color:#fff}
+.b-navy .btn.ghost{color:#fff;border-color:#fff}
+.b-navy .call{color:#c6d0de}.b-navy .call a{color:#fff}
+.b-navy :is(.tier,.num:not(.hot),.qa,.founder,.guar,.match) .mono{color:var(--muted)}.b-navy .st .mono{color:var(--accent)}
+.b-navy .hero{padding:4px 0 0}
+.b-orange{background:var(--p-orange);color:#fff;border-color:#c9551a}
+.b-orange .mono{color:#ffe3d3}.b-orange .lede{color:#fff}
+.b-orange .wk{background:#12223a;border-color:#12223a}.b-orange .wk.us{border-color:#fff}
+.b-white .num:not(.hot),.b-white .qa,.b-white details{background:var(--bg)}
+footer{border-top:none}
+/* Chad 8:38pm + 8:56pm PT: hero keeps the grid; sections alternate grid / solid dark blue / grid; landing page section on the grid */
+.b-grid{background:transparent;border-color:transparent}
+.b-navy .founder,.b-navy .st,.b-navy .qa,.b-navy details,.b-navy .num:not(.hot),.b-navy .match>div,.b-navy .win,.b-navy .tier,.b-navy .guar{color:var(--ink)}.b-navy .founder .mono{color:var(--muted)}
+/* Landing page section (Chad 2026-11-26 8:45pm PT: own section, show the page working, their branding + reviews, not a 7-step quiz) */
+.lpshow{display:grid;gap:28px;justify-items:center;max-width:900px;margin:28px auto 0}
+@media (min-width:820px){.lpshow{grid-template-columns:320px 1fr;align-items:center;justify-items:stretch;gap:48px}}
+.phone2{width:min(300px,82vw);border:10px solid #05080d;border-top-width:26px;border-radius:38px;overflow:hidden;background:#fff;box-shadow:0 0 0 2px #2f4466,0 24px 60px rgba(17,23,38,.35);aspect-ratio:390/844;position:relative}
+.phone2::before{content:"";position:absolute;top:-17px;left:50%;transform:translateX(-50%);width:28%;height:8px;border-radius:5px;background:#1c2432;z-index:2}
+.phone2 video{width:100%;height:100%;object-fit:cover;display:block}
+.feat{list-style:none;counter-reset:f;padding:0;margin:0;display:grid;gap:10px;text-align:left}
+.feat li{counter-increment:f;position:relative;background:var(--card);border:1px solid var(--line);border-radius:12px;padding:12px 14px 12px 52px;font-size:15px;color:var(--muted)}
+.feat li::before{content:counter(f,decimal-leading-zero);position:absolute;left:14px;top:12px;font-family:var(--mono);font-weight:600;color:var(--accent)}
+.feat b{display:block;color:var(--ink);font-size:16.5px}
+.trylink{margin:16px 0 0;text-align:center}.trylink a{color:var(--ink);font-weight:800}
+
+/* Ad styles + psychology (Chad 2026-11-26 9:11-9:16pm PT: teach the why behind each ad; our own Ad Library numbers) */
+.stats3{display:grid;gap:10px;max-width:900px;margin:24px auto 0}
+@media (min-width:760px){.stats3{grid-template-columns:repeat(3,1fr)}}
+.stats3>div{background:var(--card);border:1px solid var(--line);border-radius:12px;padding:16px;text-align:center}
+.stats3 b{display:block;font-size:34px;line-height:1.1;color:var(--accent);letter-spacing:-.02em}
+.stats3 span{display:block;font-size:14.5px;color:var(--muted);margin-top:4px}
+.styles{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px;max-width:1040px;margin:26px auto 0;text-align:left}
+@media (min-width:900px){.styles{grid-template-columns:repeat(4,minmax(0,1fr));gap:16px}}
+.sty{background:var(--card);border:1px solid var(--line);border-radius:14px;overflow:hidden;display:flex;flex-direction:column}
+.sty img{width:100%;height:auto;display:block;border-bottom:1px solid var(--line)}
+.sty>div{padding:12px 12px 14px}
+.sty .mono{color:var(--accent);font-size:11px}
+.sty h3{font-size:16.5px;margin:3px 0 6px;line-height:1.2}
+.sty p{font-size:14px;color:var(--muted);margin:0 0 6px;line-height:1.45}
+.sty .found{color:var(--ink);font-weight:700;font-size:13px;border-top:1px dashed var(--line);padding-top:7px;margin:4px 0 0}
+.srcnote{font-size:12px;color:var(--muted);text-align:center;max-width:70ch;margin:12px auto 0}
+/* Header bar (Chad 2026-11-27 11:41am + 11:46am PT: model the Ugly Ads bar; one row, slim links, no Landing Pages link) */
+html{scroll-behavior:smooth}
+section[id]{scroll-margin-top:80px}
+.topnav{position:sticky;top:0;z-index:20;background:var(--bg);border-bottom:1px solid var(--line);box-shadow:0 6px 18px rgba(0,0,0,.10)}
+.topnav .wrap{max-width:1240px;display:grid;grid-template-columns:1fr auto 1fr;align-items:center;height:68px;gap:20px}
+.topnav .logo{text-decoration:none;color:var(--ink);white-space:nowrap;justify-self:start}
+.topnav .links{display:flex;justify-content:center;gap:34px;padding:0;margin:0;font-weight:400;font-size:15.5px}
+.topnav .links a{color:var(--ink);text-decoration:none;white-space:nowrap}.topnav .links a:hover{color:var(--accent)}
+.navcta{justify-self:end;white-space:nowrap;background:var(--accent);color:#fff;text-decoration:none;font-weight:600;font-size:15.5px;padding:11px 20px;border-radius:6px}
+.navcta:hover{filter:brightness(1.06)}.navcta .smt{display:none}
+@media (max-width:1060px){.topnav .links{gap:22px;font-size:15px}.topnav .wrap{gap:16px}}
+@media (max-width:980px){.navcta .lg{display:none}.navcta .smt{display:inline}}
+@media (max-width:800px){.topnav .wrap{grid-template-columns:1fr auto;height:60px}.topnav .links{display:none}.navcta .lg{display:inline}.navcta .smt{display:none}}
+@media (max-width:520px){.navcta .lg{display:none}.navcta .smt{display:inline}.topnav .logo{font-size:17px}.navcta{padding:10px 16px}}
+/* How it works, merged with the old "how the system works" (Chad 2026-11-27 12:20pm PT: one section, roofer's point of view) */
+.how3{display:grid;gap:26px;max-width:1040px;margin:28px auto 0}
+@media (min-width:860px){.how3{grid-template-columns:repeat(3,1fr);gap:20px}}
+.hs{text-align:center}.hs .win{margin-bottom:14px}
+.hs .stp{color:var(--accent)!important;margin-top:4px}.hs h3{font-size:21px;margin:4px 0 6px}
+.b-navy .hs p{color:#c6d0de}.b-grid .hs p{color:var(--muted)}
+.hs .morph{max-width:190px;width:100%}
+@media (min-width:860px){.hs .win{height:300px;display:flex;flex-direction:column}.hs .win .body{flex:1;display:flex;flex-direction:column;justify-content:center}.hs .rows{width:100%}}
+.r.pick{border-color:var(--accent);background:color-mix(in srgb,var(--accent) 10%,transparent)}
+/* How it works, vertical (Chad 2026-11-27 12:28pm PT: steps stacked; photo-to-ad scroll; bullets for what they get) */
+.tl{position:relative;max-width:900px;margin:30px auto 0;text-align:left}
+.tl::before{content:"";position:absolute;left:21px;top:10px;bottom:10px;width:2px;background:color-mix(in srgb,var(--accent) 45%,transparent)}
+.ts{display:grid;grid-template-columns:44px minmax(0,1fr);gap:18px;margin-bottom:38px;position:relative}.ts:last-child{margin-bottom:0}
+.tn{width:44px;height:44px;border-radius:50%;background:var(--accent);color:#fff;font-weight:800;font-size:20px;display:grid;place-items:center;position:relative;z-index:1}
+.tc h3{font-size:24px;margin:8px 0 6px}.tc p{margin:0 0 10px}
+.b-navy .tc p{color:#c6d0de}.b-navy .tc p.key{color:#fff;font-weight:700}
+.win.ckw{max-width:420px;margin-top:12px}.win.ckw .r{opacity:1;animation:none;color:var(--ink)}
+.marq{overflow:hidden;margin-top:14px;border-radius:12px;-webkit-mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent);mask-image:linear-gradient(90deg,transparent,#000 6%,#000 94%,transparent)}
+.mtrack{display:flex;gap:18px;width:max-content;animation:mq 38s linear infinite}
+.marq:hover .mtrack{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(calc(-50% - 9px))}}
+.pp{flex:none}
+.pp2{display:flex;align-items:center;gap:8px}
+.pp figure{margin:0;width:150px}
+.pp img{width:150px;aspect-ratio:4/5;object-fit:cover;border-radius:8px;display:block}
+.pp figcaption{font-family:var(--mono);font-size:11px;text-transform:uppercase;letter-spacing:.06em;color:#9fb0c9;margin-top:5px;text-align:center}
+.pp figcaption.o{color:var(--accent)}
+.pp .ar{color:var(--accent);font-weight:800;font-size:22px}
+.pl{text-align:center;font-weight:700;font-size:14px;margin-top:4px;color:#fff}
+.b-grid .pl{color:var(--ink)}.b-grid .pp figcaption{color:var(--muted)}
+@media (max-width:600px){.pp figure,.pp img{width:118px}.tc h3{font-size:21px}.ts{grid-template-columns:36px minmax(0,1fr);gap:12px}.tn{width:36px;height:36px;font-size:17px}.tl::before{left:17px}}
+@media (prefers-reduced-motion:reduce){.mtrack{animation:none}.marq{overflow-x:auto}}
+.got{list-style:none;padding:0;margin:8px 0 0;display:grid;gap:10px}
+.got li{display:grid;grid-template-columns:26px 1fr;column-gap:4px;align-content:start;font-size:15.5px;color:#c6d0de}
+.got li::before{content:"\2713";grid-row:span 2;color:var(--accent);font-weight:800;font-size:17px}
+.got b{color:#fff;font-size:16.5px}
+.b-grid .got li{color:var(--muted)}.b-grid .got b{color:var(--ink)}
+@media (min-width:760px){.got{grid-template-columns:1fr 1fr;gap:14px 24px}}
+/* Step 2 rework (Chad 2026-11-27 12:34pm PT: not "their photo + our text"; they may not have storm/leak photos) */
+.build{display:grid;gap:14px;margin-top:14px;align-items:center}
+@media (min-width:760px){.build{grid-template-columns:200px 30px 1fr}}
+.sendbox,.getbox{background:var(--card);color:var(--ink);border:1px solid var(--line);border-radius:14px;padding:14px;text-align:center}
+.sendbox .mono,.getbox .mono{color:var(--accent)!important;margin-bottom:8px}
+.sb-logo{color:var(--ink);display:flex;align-items:center;justify-content:center;gap:7px;margin:4px 0 10px}.sb-logo svg{width:30px;height:30px}
+.sb-logo b{display:block;font-size:14px;letter-spacing:.14em;color:var(--ink);line-height:1}.sb-logo i{display:block;font-style:normal;font-size:8px;letter-spacing:.3em;color:#e8742a;font-weight:700;margin-top:3px}
+.sb-sw{display:flex;justify-content:center;gap:6px;margin-bottom:10px}.sb-sw i{width:22px;height:22px;border-radius:5px;border:1px solid var(--line)}
+.sb-ph{display:grid;grid-template-columns:repeat(3,1fr);gap:5px}.sb-ph img{width:100%;aspect-ratio:1;object-fit:cover;border-radius:6px;display:block}
+.sendbox p,.getbox p{font-size:13.5px;color:var(--muted)!important;margin:10px 0 0}
+.buildar{color:var(--accent);font-size:28px;font-weight:800;text-align:center}
+@media (max-width:759px){.buildar{transform:rotate(90deg)}}
+.outs{display:grid;grid-template-columns:repeat(4,1fr);gap:8px}
+.outs figure{margin:0}.outs img{width:100%;aspect-ratio:4/5;object-fit:cover;border-radius:6px;display:block}
+.outs figcaption{font-size:11.5px;font-weight:600;margin-top:4px;color:var(--ink);line-height:1.2}
+@media (max-width:480px){.outs{grid-template-columns:repeat(2,1fr)}}
+.add{list-style:none;padding:0;margin:16px 0 0;display:grid;gap:10px}
+.add li{display:grid;grid-template-columns:26px 1fr;column-gap:4px;align-content:start;font-size:15.5px;color:#c6d0de}
+.add li::before{content:"+";grid-row:span 2;color:var(--accent);font-weight:800;font-size:20px;line-height:1.1}
+.add b{color:#fff;font-size:16.5px}
+.b-grid .add li{color:var(--muted)}.b-grid .add b{color:var(--ink)}
+@media (min-width:760px){.add{grid-template-columns:1fr 1fr;gap:14px 24px}}
+.sb-url{font-family:var(--mono);font-size:13px;border:1px solid var(--line);border-radius:8px;padding:8px 10px;background:var(--bg);color:var(--ink);margin-bottom:8px}
+.sb-pull{font-size:12px;font-weight:700;color:var(--muted);margin-bottom:2px}.sb-pull::before{content:"\2193  ";color:var(--accent)}
+/* Simplified (Chad 2026-11-27 12:43pm PT: roofers who don't like tech; must be very clear) */
+.tt{display:inline-block;font-family:var(--mono);font-size:11.5px;text-transform:uppercase;letter-spacing:.06em;color:var(--accent);border:1px solid color-mix(in srgb,var(--accent) 55%,transparent);border-radius:999px;padding:3px 10px;margin-top:8px}
+.urlbox{display:flex;max-width:380px;margin:12px 0 8px;background:var(--card);border:1px solid var(--line);border-radius:10px;overflow:hidden}
+.urlbox span{flex:1;padding:12px 14px;font-family:var(--mono);font-size:15px;color:var(--ink)}
+.urlbox b{background:var(--accent);color:#fff;padding:12px 18px;font-size:15px}
+.tc .small2{font-size:15px}
+.tc .outrow{display:grid;grid-template-columns:1fr 176px;gap:18px;align-items:stretch;margin:14px 0 4px;max-width:900px}
+.tc .outrow .outs{margin:0}
+.tc .got.g3{margin-top:32px}
+.outlp{margin:0;display:flex;flex-direction:column}.lpph{flex:1;border:6px solid #05080d;border-top-width:14px;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 0 0 2px #2f4466;min-height:0}
+.lpph img{width:100%;height:100%;object-fit:cover;object-position:top;display:block}
+.outlp figcaption{text-align:center;font-size:12.5px;font-weight:700;margin-top:6px;color:var(--accent)}
+@media (max-width:600px){.tc .outrow{grid-template-columns:1fr}.outlp{width:200px;margin:6px auto 0}.lpph{flex:none;aspect-ratio:390/700}}
+.b-navy .outs figcaption{color:#fff}.tc .outs figcaption{text-align:center;font-size:12.5px}
+@media (max-width:600px){.tc .outs figure:nth-child(n+5){display:none}}
+@media (min-width:760px){.tc .got{grid-template-columns:1fr 1fr;max-width:760px}.tc .got.g3{grid-template-columns:1fr 1fr 1fr;max-width:none}}
+.tc .got.g1{grid-template-columns:1fr;gap:8px;margin-top:10px}.tc .got.g1 li{font-size:16.5px;color:#dbe2ec}.b-grid .tc .got.g1 li{color:var(--ink)}
+
+/* Chad 2026-11-27 2:00pm PT: whole FAQ card clickable + every button lifts with a shadow on hover */
+details{padding:0;transition:border-color .15s,box-shadow .15s,transform .15s}
+summary{padding:16px 18px}
+details p{margin:0;padding:0 18px 0 40px}details p:last-child{padding-bottom:16px}details p+p{margin-top:10px}
+details:hover{border-color:var(--accent);box-shadow:0 8px 22px rgba(0,0,0,.28);transform:translateY(-1px)}
+.btn,.navcta,.trylink{transition:transform .15s,box-shadow .15s,filter .15s;cursor:pointer}
+.btn:hover,.navcta:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(232,116,42,.35);filter:brightness(1.06)}
+.btn.ghost:hover{box-shadow:0 10px 24px rgba(0,0,0,.3);background:rgba(255,255,255,.06)}
+.btn:active,.navcta:active{transform:translateY(0);box-shadow:none}
+@media (prefers-reduced-motion:reduce){details:hover,.btn:hover,.navcta:hover{transform:none}}
+#site{scroll-margin-top:150px}
+
+/* Chad 2026-11-27 2:12pm PT: no one-word lines on phones */
+h1,h2,h3,summary,.ln{text-wrap:balance}.ln{display:block}
+@media (max-width:480px){h2{font-size:clamp(26px,7vw,30px)}}
+p,li,figcaption,.t,.no,.lede{text-wrap:pretty}
+
+/* Chad 2026-11-27 2:16pm PT: sample ads in an organized grid, not a collage: same size cards, rows line up */
+.collage{columns:auto;display:flex;flex-wrap:wrap;justify-content:center;gap:8px}
+.collage .fb{margin:0;width:calc((100% - 8px)/2);display:flex;flex-direction:column}
+.collage .fbt{min-height:calc(3 * 1.35em)}
+.collage .fb img{aspect-ratio:4/5;object-fit:cover;margin:0}
+.collage .fbf{margin-top:auto}
+.collage .fbf b{min-height:calc(2 * 1.22em)}
+@media (min-width:760px){.collage{gap:12px}.collage .fb{width:calc((100% - 24px)/3)}}
+</style>
+
+<div class="demo">Draft sales page. Name, prices and terms are placeholders. Nothing here charges or sends anything.</div>
+
+</head><body>
+<header class="topnav"><div class="wrap">
+ <a class="logo" href="#top">Roofer Ad <span>Funnels</span></a>
+ <nav class="links"><a href="#get">What You Get</a><a href="#packs">Pricing</a><a href="#how">How It Works</a></nav>
+ <a class="navcta" href="#top"><span class="lg">Get Free Ad Pack</span><span class="smt">Get Free Ad Pack</span></a>
+</div></header>
+
+<section class="band b-grid" id="top"><div class="wrap">
+<div class="hero">
+ <div>
+  <h1>Facebook Ads And Landing Pages Designed To <span class="hk">Generate Leads</span> For Roofing Contractors.</h1>
+  <p class="lede"><b>Custom-built</b> with your logo, colors, crew, pricing and job photos.<br>Modeled on the home service ads that run longest on Facebook.</p>
+  <ul class="proof"><li>Ready in 1 day</li><li>No contract</li><li>3 free ads</li></ul>
+  <form class="free" id="freeform" data-ll-custom-form-keys='["website","email"]' data-ll-name="Free 3 Ads">
+   <div class="mono" style="color:var(--accent);margin-bottom:8px">Your first 3 ads are free</div>
+   <label for="site">Your website or Facebook page <span class="hint">(we pull your logo and colors)</span></label><input id="site" name="website" placeholder="yourroofing.com" required>
+   <label for="mail">Email</label><input id="mail" name="email" type="email" placeholder="you@yourroofing.com" required>
+   <p class="small">3 finished ads customized to your brand, colors and photos.<br>Emailed within 24 hours.</p>
+   <button class="btn or" type="submit">Get My 3 Free Ads &rarr;</button>
+   <p class="done">Got it. Your 3 free ads are on their way within 24 hours.</p>
+  </form>
+  <p class="alt">Ready now? <a href="#packs">See the packs &darr;</a></p>
+ </div>
+</div>
+</div></section>
+
+<section class="band b-navy" id="get"><div class="wrap center">
+ <div class="mono">What you get</div>
+ <h2>Ad Styles Designed To Grab Attention, Spark Interest And <span class="hk">Generate Leads</span></h2>
+ <ul class="proof topics"><li>Before and afters</li><li>Pricing</li><li>Costs</li><li>Insurance</li><li>Storm damage</li><li>Early warning signs</li></ul>
+ <p class="lede"><b>Different styles, one job:</b><br><em>Get the homeowner to tap and ask for a quote.</em></p>
+ <div class="collage">
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#1e3c6e"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>TR</i></span><div><b>Thornbury Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">Same house, one day apart. This is what a full roof replacement looks like.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-thornbury.jpg" alt="Sample Facebook ad for Thornbury Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>THORNBURYROOFING.COM</span><b>See Your New Roof In 1 Day</b></div><em>Get Quote</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#142242"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>H&amp;S</i></span><div><b>Harlow &amp; Sons Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">New roof for $6,990? Here&#x27;s how we keep it that low.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-harlow.jpg" alt="Sample Facebook ad for Harlow &amp; Sons Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>HARLOWANDSONSROOFING.COM</span><b>New Roof From $6,990</b></div><em>Get Quote</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#2f7d4a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>TG</i></span><div><b>Tallgrass Roofing Co.</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">That brown ring on your ceiling? It&#x27;s usually the roof, not the ceiling.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-tallgrass.jpg" alt="Sample Facebook ad for Tallgrass Roofing Co., a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>TALLGRASSROOFINGCO.COM</span><b>Free Roof Leak Check</b></div><em>Book Now</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#b8652e"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>CR</i></span><div><b>Copperline Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">Got a roof quote that feels high? Text it to me. I&#x27;ll tell you straight if it&#x27;s fair. - Mike, owner</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-copperline.jpg" alt="Sample Facebook ad for Copperline Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>COPPERLINEROOFING.COM</span><b>Free 2nd Opinion On Your Quote</b></div><em>Send Message</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#1b1b1f"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>FR</i></span><div><b>Fenwick Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">Hail came through last week. Dents like these can turn into leaks months later.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-fenwick.jpg" alt="Sample Facebook ad for Fenwick Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>FENWICKROOFING.COM</span><b>Free Storm Damage Check</b></div><em>Book Now</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#122c52"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>BR</i></span><div><b>Bluestone Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">Every Bluestone roof is a full tear-off. Here&#x27;s every layer we put back. Want to know what&#x27;s under yours? Get a free quote.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-bluestone-45.jpg" alt="Sample Facebook ad for Bluestone Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>BLUESTONEROOFING.COM</span><b>See What&#x27;s Under Your Roof</b></div><em>Get Quote</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#184078"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>PR</i></span><div><b>Pellston Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">Ask any roofer these 5 questions before you sign. We&#x27;ll answer all 5 with your free quote.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-pellston.jpg" alt="Sample Facebook ad for Pellston Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>PELLSTONROOFING.COM</span><b>5 Questions Before You Sign</b></div><em>Get Quote</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#2c6e8f"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>LR</i></span><div><b>Linden Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">Catch these 6 signs early, before a small fix turns into a new roof.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-linden.jpg" alt="Sample Facebook ad for Linden Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>LINDENROOFING.COM</span><b>6 Signs Your Roof Needs Work</b></div><em>Book Now</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#10342a"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>WR</i></span><div><b>Wrenfield Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">Free roof quotes this week. No pressure, no sales pitch, just a fair price.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-wrenfield.jpg" alt="Sample Facebook ad for Wrenfield Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>WRENFIELDROOFING.COM</span><b>Free Roof Quote This Week</b></div><em>Get Quote</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#784828"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>CH</i></span><div><b>Cedar Hollow Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">Roof prices are all over the place. Here&#x27;s what a new roof should cost you.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-cedarhollow.jpg" alt="Sample Facebook ad for Cedar Hollow Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>CEDARHOLLOWROOFING.COM</span><b>What Should A Roof Cost?</b></div><em>Get Quote</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#c8101e"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>K</i></span><div><b>Kestrel Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">New roof? It&#x27;s 3 easy steps with Kestrel. Free roof check, your price in 24 hours.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-kestrel.jpg" alt="Sample Facebook ad for Kestrel Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>KESTRELROOFING.COM</span><b>Get Your Price In 24 Hours</b></div><em>Get Quote</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#962828"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>MR</i></span><div><b>Marlow Ridge Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">Tired of patching the same leak every spring? Most new roofs go on in one day.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-marlow-45.jpg" alt="Sample Facebook ad for Marlow Ridge Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>MARLOWRIDGEROOFING.COM</span><b>New Roof In One Day</b></div><em>Get Quote</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#c41e28"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>BW</i></span><div><b>Bramblewood Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">Missing shingles after the last storm? Don&#x27;t wait for the leak.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-bramblewood.jpg" alt="Sample Facebook ad for Bramblewood Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>BRAMBLEWOODROOFING.COM</span><b>Free Roof Inspection</b></div><em>Book Now</em></div>
+  </div>
+  <div class="fb">
+   <div class="fbh"><span class="av" style="background:#141418"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 12 12 4l9 8" fill="none" stroke="#fff" stroke-width="2.6" stroke-linejoin="round" stroke-linecap="round"/></svg><i>HR</i></span><div><b>Halverson Roofing</b><span>Sponsored · &#127760;&#xFE0E;</span></div><span class="dots">&middot;&middot;&middot;</span></div>
+   <p class="fbt">Before you sign that roof quote, get a second one. It could save you thousands.</p>
+   <img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-halverson.jpg" alt="Sample Facebook ad for Halverson Roofing, a made-up roofing company" loading="lazy" decoding="async">
+   <div class="fbf"><div><span>HALVERSONROOFING.COM</span><b>Always Get A 2nd Quote</b></div><em>Get Quote</em></div>
+  </div>
+ </div>
+</div></section>
+
+<section class="band b-grid" id="page"><div class="wrap">
+ <div class="center"><div class="mono">Your landing page</div>
+ <h2><span class="ln">Landing Pages Built To</span><span class="ln"><span class="hk">Turn Clicks Into Quotes</span></span></h2>
+ <p class="lede">Your ad sends homeowners to a page with your logo, your reviews and your job photos.<br><b>One short form. They ask for a quote in about 30 seconds.</b></p></div>
+ <div class="lpshow">
+  <div class="phone2"><video data-src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/lander-demo.mp4" poster="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/lander-poster.jpg" muted loop playsinline preload="none" aria-label="Roofer landing page: one-page quote form, then the full page scrolling"></video></div>
+  <div>
+   <ol class="feat">
+    <li><b>Your logo, colors and phone number</b>Homeowners can tap to call or text you from any screen.</li>
+    <li><b>Your best offer up top</b>Free quote, price lock, one-day install: the first thing homeowners read.</li>
+    <li><b>A one-page quote form</b>What the roof needs, name, address and mobile number.<br>About 30 seconds.</li>
+    <li><b>Your Google reviews</b>Pulled from your Google page, in your customers' own words.</li>
+    <li><b>Your before and afters</b>Your job photos, with a before-and-after slider.</li>
+    <li><b>Your guarantees</b>Price lock, workmanship warranty, clean yard: whatever you promise.</li>
+    <li><b>Meet the owner</b>Your face and a few words from you.</li>
+    <li><b>Built around your strengths</b>One free round of changes: add, remove or reorder sections to fit what your company does best.</li>
+   </ol>
+   <p class="trylink"><a href="/kestrel-roofing" target="_blank" rel="noopener">Try the full page yourself &rarr;</a></p>
+  </div>
+ </div>
+</div></section>
+
+<section class="band b-navy" id="brand"><div class="wrap">
+ <div class="center"><div class="mono">Custom to your brand</div><h2><span class="ln">Built For Your Company.</span><span class="ln"><span class="hl">Your Brand On Every Ad.</span></span></h2>
+ <p class="lede">These aren't stock ads every roofer gets.<br>Every ad is made for your company alone: your logo, your brand colors, your truck, your crew, your face.</p>
+ <p class="lede"><b>Homeowners see your company, not another ad that looks like everyone else's.</b></p></div>
+ <div class="match">
+  <div><span class="ic">&#9673;</span><b>Your logo</b>On every ad, placed where it reads at a glance.</div>
+  <div><span class="ic">&#9635;</span><b>Your brand colors</b>Matched to your trucks, shirts, yard signs and website.</div>
+  <div><span class="ic">&#9737;</span><b>Your face and your crew</b>Real photos of you and your people, not stock models.</div>
+  <div><span class="ic">&#9650;</span><b>Your trucks and your jobs</b>Roofs you actually did, in towns you actually work.</div>
+  <div><span class="ic">&#9733;</span><b>Your town and your price</b>Your service area, your starting price, your offer.</div>
+  <div><span class="ic">&#10077;</span><b>Your voice</b>Words that sound like you talking to a neighbor.</div>
+ </div>
+</div></section>
+
+<section class="band b-grid" id="why"><div class="wrap">
+ <div class="center"><div class="mono">The psychology behind each ad</div>
+ <h2><span class="ln">Every Ad Style Has A Job.</span><span class="ln"><span class="hk">Here's Why Each One Works.</span></span></h2>
+ <p class="lede">We pulled 301 live roofing ads from 84 roofing companies and sorted them by how long each one has kept running.</p>
+ <p class="lede"><b>The ads still running after 90 days have one thing in common:<br>they build trust first.</b></p></div>
+ <div class="stats3">
+  <div><b>4x</b><span>more reviews and star ratings in ads running 90+ days.</span></div>
+  <div><b>3x</b><span>more free inspection and free estimate offers in ads running 90+ days.</span></div>
+  <div><b>3x</b><span>more question openers, like "Why is this always wet?", in ads running 90+ days.</span></div>
+ </div>
+ <div class="styles">
+  <div class="sty"><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-thornbury.jpg" alt="Before And After roofing ad" loading="lazy"><div><div class="mono">Style 01</div><h3>Before And After</h3><p>Homeowners trust what they can see more than anything you claim.<br>One photo pair proves the work.</p></div></div>
+  <div class="sty"><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-fenwick.jpg" alt="Storm Damage And Insurance roofing ad" loading="lazy"><div><div class="mono">Style 02</div><h3>Storm Damage And Insurance</h3><p>A recent storm gives a reason to act now.<br>"Your insurance may cover it" takes the price worry off the table.</p><p class="found">In 29% of long-running ads, 13% of new ones.</p></div></div>
+  <div class="sty"><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-bramblewood.jpg" alt="Free Inspection roofing ad" loading="lazy"><div><div class="mono">Style 03</div><h3>Free Inspection</h3><p>A small, free yes comes before the big one.<br>Nobody has to decide on a whole roof just to tap.</p><p class="found">Free inspection or estimate: 38% of long-running ads, 12% of new ones.</p></div></div>
+  <div class="sty"><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-tallgrass.jpg" alt="Warning Sign Question roofing ad" loading="lazy"><div><div class="mono">Style 04</div><h3>Warning Sign Question</h3><p>"Why is this always wet?" sends them to look at their own ceiling.<br>Now it's their problem, not your pitch.</p><p class="found">Question openers: 26% of long-running ads, 9% of new ones.</p></div></div>
+  <div class="sty"><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-cedarhollow.jpg" alt="Price, Explained roofing ad" loading="lazy"><div><div class="mono">Style 05</div><h3>Price, Explained</h3><p>A bare price reads like a deal and starts a price war.<br>A price that explains itself reads like an honest expert.</p></div></div>
+  <div class="sty"><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-copperline.jpg" alt="Owner Intro roofing ad" loading="lazy"><div><div class="mono">Style 06</div><h3>Owner Intro</h3><p>People hire people.<br>A face, a name and a promise ease the "stranger at my house" worry.</p></div></div>
+  <div class="sty"><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-linden.jpg" alt="Numbered Warning Signs roofing ad" loading="lazy"><div><div class="mono">Style 07</div><h3>Numbered Warning Signs</h3><p>A list is easy to scan and teaches something useful.<br>The company that teaches looks like the expert.</p></div></div>
+  <div class="sty"><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/c-halverson.jpg" alt="Get A Second Quote roofing ad" loading="lazy"><div><div class="mono">Style 08</div><h3>Get A Second Quote</h3><p>Homeowners are afraid of overpaying.<br>Telling them to get a second quote makes you the honest one.</p></div></div>
+ </div>
+ <p class="lede" style="margin-top:26px"><b>Every ad in your pack comes with its job written down:</b><br>which style it is, and why it works on homeowners.</p>
+ <p class="srcnote">Source: live US roofing company ads in Facebook's Ad Library, pulled November 2026. "Running" means days since each ad started. "New" means under 30 days.</p>
+</div></section>
+
+<section class="band b-navy" id="how"><div class="wrap">
+ <div class="center"><div class="mono">How it works</div><h2><span class="ln">Three Simple Steps.</span><span class="ln"><span class="hl">No Tech Skills Needed.</span></span></h2></div>
+ <div class="tl">
+  <div class="ts"><div class="tn">1</div><div class="tc"><h3>Pick A Pack</h3><p>Checkout takes a minute.<br>No call needed.</p>
+  </div></div>
+  <div class="ts"><div class="tn">2</div><div class="tc"><h3>Send Us Your Website Or Facebook Page</h3>
+   <ul class="got g1"><li>We grab your logo, colors and photos from there.</li><li>Send us any other photos you want to use.</li></ul>
+  </div></div>
+  <div class="ts"><div class="tn">3</div><div class="tc"><h3>Get Your Ads <span style="white-space:nowrap">+ Landing Page</span></h3><p>We do the rest.<br>In 1 business day, you get ads like these and your own landing page, made for your company:</p>
+   <div class="outrow"><div class="outs"><figure><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/out-v1-S1-A.jpg" alt="" loading="lazy"><figcaption>Low overhead</figcaption></figure><figure><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/out-brand-kestrel.jpg" alt="" loading="lazy"><figcaption>Price</figcaption></figure><figure><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/out-F.jpg" alt="" loading="lazy"><figcaption>Warning signs</figcaption></figure><figure><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/out-v1-S3-B.jpg" alt="" loading="lazy"><figcaption>2nd quote</figcaption></figure><figure><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/out-D.jpg" alt="" loading="lazy"><figcaption>Free inspection</figcaption></figure><figure><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/out-E.jpg" alt="" loading="lazy"><figcaption>Cost explained</figcaption></figure><figure><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/out-v1-S2-A.jpg" alt="" loading="lazy"><figcaption>No pushy sales</figcaption></figure><figure><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/out-c-kestrel.jpg" alt="" loading="lazy"><figcaption>3 easy steps</figcaption></figure></div>
+    <figure class="outlp"><div class="lpph"><img src="https://static.ll-assets.com/variants/unpublished/78b5899715b92b0d718f9b010d6bf2d6/img/out-lander.jpg" alt="Sample roofer landing page with a free quote form" loading="lazy"></div><figcaption>Your landing page</figcaption></figure></div>
+   <ul class="got g3">
+    <li><b>Ads ready to post</b>Sized for Facebook, with the text written for you.</li>
+    <li><b>Your landing page</b>Built with your quote form, reviews and guarantees.</li>
+    <li><b>Easy upload steps</b>Simple steps with pictures. No tech skills needed.</li>
+   </ul>
+  </div></div>
+ </div>
+</div></section>
+
+<section class="band b-grid"><div class="wrap">
+ <div class="mono">What's in it for you</div>
+ <h2><span class="ln">You're On Roofs All Day.</span><span class="ln"><span class="hl">We Make Your Ads.</span></span></h2>
+ <p class="lede">No writing, no designing, no guessing what to post.</p>
+ <div class="nums">
+  <div class="num"><div class="mono">Fast</div><div class="v">1 day</div><div class="t">Fresh ads, ready to post.</div><div class="no">Not the same ad for 6 months.</div></div>
+  <div class="num"><div class="mono">Your brand</div><div class="v">Yours</div><div class="t">Your logo, colors, photos and face on every ad.</div><div class="no">No stock photos like every other roofer.</div></div>
+  <div class="num"><div class="mono">The goal</div><div class="v">Leads</div><div class="t">Designed to get clicks and bring in more leads.</div><div class="no">No ads that just get likes.</div></div>
+  <div class="num"><div class="mono">One payment</div><div class="v">$0/mo</div><div class="t">One payment from $297.<br>No contract.</div><div class="no">No $750 to $3,000 agency bill each month.</div></div>
+ </div>
+</div></section>
+
+<section class="band b-navy" id="packs"><div class="wrap">
+ <div class="center"><h2>Pick Your Pack</h2><p class="packsub">One payment. No contract. Hosting optional.</p></div>
+ <div class="tiers t2">
+  <div class="tier"><div class="mono">Starter</div><div class="price">$297</div><p class="per">one payment</p>
+   <ul><li>12 ads across 6+ styles</li><li>Custom to your logo, colors and photos</li><li>Ready to upload to Facebook</li><li>Your landing page with a quote form, your reviews and guarantees</li><li>One free round of changes</li></ul>
+   <p class="addon">Want your page live? Add hosting for $47/mo.<br>Cancel anytime.</p><a class="btn ghost" href="#">Get Starter</a></div>
+  <div class="tier pop"><div class="badge">Best value</div><div class="mono">Done for you</div><div class="price">$997</div><p class="per">one payment</p>
+   <ul><li>30 ads across 9+ styles</li><li>Custom to your logo, colors and photos</li><li>Your landing page, live and set up for you</li><li>Quote requests sent to your phone or email</li><li>10 fresh ads 30 days later, when the first ones get tired</li><li>One free round of changes</li><li>3 months of hosting included</li></ul>
+   <p class="addon">Then $47/mo to keep it live, or we send you the page files.<br>Your choice. Cancel anytime.</p><a class="btn or" href="#">Get Done For You</a></div>
+ </div>
+ <div class="guar"><div class="mono">The guarantee</div><h3>Love What We Build.<br><span>Or We Redo It Free.</span></h3><p style="color:var(--muted);margin:0">One free round of changes on your ads and your landing page.<br>The ads are yours to keep.</p></div>
+</div></section>
+
+<section class="band b-grid" id="faq"><div class="wrap">
+ <div class="center"><div class="mono">Straight answers</div><h2>Questions Roofers Ask</h2></div>
+ <div class="faq"><details><summary>What does it cost?</summary><p>One payment: $297 or $997, depending on the pack.</p><p>No contract. Hosting your page is optional: $47/mo, cancel anytime.</p></details>
+ <details><summary>Where do the ideas come from?</summary><p>From roofing and home service ads that have kept running on Facebook for 4 months to 3 years.</p><p>Nobody keeps paying for an ad that doesn't bring calls.</p><p>We copy the format and the idea, never another company's words, photos or name.</p></details>
+ <details><summary>Will these get me leads?</summary><p>They're built for it: every ad uses a format other contractors have kept paying to run, some for years.</p><p>No one can honestly promise a number of leads. That also depends on your price, area, budget and reviews.</p></details>
+ <details><summary>Do I run the ads?</summary><p>Yes, in your own Facebook account, or hand them to whoever runs your ads. We never touch your account or your money.</p></details>
+ <details><summary>Do I need a web person to put my page live?</summary><p>Not with Done For You: we put it live and send quote requests to your phone or email.</p><p>With Starter, you get the page files, or add our hosting and we put it live for you.</p></details>
+ <details><summary>Can I change the landing page?</summary><p>Yes. One free round of changes is included.</p><p>Add, remove or reorder sections to fit what your company does best.</p></details>
+ <details><summary>How long until I get my ads?</summary><p>1 business day after we get your form and photos.</p></details>
+ <details><summary>What if I don't have good photos?</summary><p>Phone photos are perfect. If you have none yet, we'll use plain job-site pictures and tell you which ones to swap in.</p></details>
+ <details><summary>Are the 3 free ads really free?</summary><p>Yes. 3 finished ads per company, emailed within 24 hours.</p><p>No card, no call.</p></details>
+</div>
+</div></section>
+
+<section class="band b-navy center"><div class="wrap">
+ <h2><span class="ln">Ready For More Leads?</span><span class="ln"><span class="hl">Start With 3 Free Ads.</span></span></h2>
+ <p class="lede">Built with your logo, colors and photos.<br>Emailed within 24 hours.<br>No card, no call.</p>
+ <div style="display:flex;gap:10px;justify-content:center;flex-wrap:wrap;margin-top:18px"><a class="btn or" href="#site">Get My 3 Free Ads &rarr;</a><a class="btn ghost" href="#packs">See Packs</a></div>
+</div></section>
+
+<footer><div class="wrap"><a href="/privacy">Privacy</a> · <a href="/terms">Terms</a> · <a href="/contact">Contact</a></div></footer>
+
+<script>
+/* "Get My 3 Free Ads" links: scroll to the form, then put the cursor in the first box */
+document.querySelectorAll('a[href="#site"]').forEach(function(a){a.addEventListener('click',function(){setTimeout(function(){var i=document.getElementById('site');i&&i.focus({preventScroll:true})},700)})});
+/* demo video: load it as it gets close, start it from the top only when it is on screen, pause when it leaves (Chad 2026-11-27 2:10pm PT) */
+(function(){var v=document.querySelector('video[data-src]');if(!v)return;var started=false;
+function load(){if(!v.getAttribute('src')){v.src=v.dataset.src;v.load()}}
+function play(){load();if(!started){started=true;try{v.currentTime=0}catch(e){}}var p=v.play();if(p&&p.catch)p.catch(function(){})}
+if(!('IntersectionObserver' in window)){play();return}
+new IntersectionObserver(function(e){if(e[0].isIntersecting)load()},{rootMargin:'800px'}).observe(v);
+new IntersectionObserver(function(e){if(e[0].isIntersecting)play();else if(started)v.pause()},{threshold:0.6}).observe(v)})();
+
+(function(){var f=document.getElementById('freeform');if(!f)return;f.addEventListener('submit',function(e){e.preventDefault();
+var p={website:f.querySelector('[name=website]').value.trim(),email:f.querySelector('[name=email]').value.trim()};
+try{document.dispatchEvent(new CustomEvent('ll-custom-form-submit',{detail:p}))}catch(x){}
+f.querySelector('.btn').style.display='none';f.querySelector('.done').style.display='block'})})();
+</script>
+
+</body></html>

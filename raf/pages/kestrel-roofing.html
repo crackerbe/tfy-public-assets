@@ -1,0 +1,249 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Kestrel Roofing Quote</title>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap">
+<style>
+/* Sample contractor landing page for the roofer sales page (Chad 2026-11-26 8:45pm PT: "massively improve our landers... their branding, testimonials... not a 7 step quiz... its own section").
+   Model: Element Roofing quote page (elementroofingoffers.com/qualify, long-running roofer page) cut to ONE short form on one screen (Chad 8:51pm PT: "1 page quote lander form... testimonials, benefits, guarantees"),
+   + the usual home-service contractor page blocks (owner, reviews, recent jobs, how the quote works). Brand = sample company Kestrel Roofing Co. */
+:root{--navy:#142440;--navy2:#1d3358;--or:#e8742a;--or2:#fdeee3;--ink:#16202f;--muted:#5b6575;--line:#e4e7ec;--bg:#fff;--soft:#f5f6f8;--gold:#f5b301}
+*{box-sizing:border-box}
+html{color-scheme:light}
+body{margin:0;background:var(--bg);color:var(--ink);font-family:Inter,system-ui,sans-serif;font-size:17px;line-height:1.5}
+a{color:inherit}
+.wrap{max-width:640px;margin:0 auto;padding:0 16px}
+header{position:sticky;top:0;z-index:5;background:#fff;border-bottom:1px solid var(--line)}
+header .wrap{display:flex;align-items:center;justify-content:space-between;height:60px}
+.logo{display:flex;align-items:center;gap:8px;text-decoration:none}
+.logo svg{width:34px;height:34px}
+.logo b{display:block;font-size:17px;letter-spacing:.14em;color:var(--navy);line-height:1}
+.logo i{display:block;font-style:normal;font-size:9.5px;letter-spacing:.32em;color:var(--or);font-weight:700;margin-top:3px}
+.tel{display:flex;align-items:center;gap:6px;font-weight:700;font-size:15px;color:var(--navy);text-decoration:none;border:1.5px solid var(--navy);border-radius:999px;padding:7px 12px}
+.tel svg{width:15px;height:15px}
+h1{font-size:clamp(34px,9vw,48px);line-height:1.05;letter-spacing:-.025em;margin:18px 0 10px;font-weight:800;color:var(--navy);text-align:center}
+h1 em{font-style:normal;color:var(--or)}
+.dek{text-align:center;color:var(--muted);margin:0 auto 12px;max-width:40ch}
+.dek b{display:block;color:var(--ink);margin-top:4px}
+.stars{display:flex;justify-content:center;align-items:center;gap:8px;font-size:14px;font-weight:600;color:var(--ink);margin:0 0 14px}
+.stars span{color:var(--gold);letter-spacing:1px;font-size:16px}
+.g{display:inline-block;width:18px;height:18px;vertical-align:-3px;margin-right:4px;letter-spacing:0!important}.g svg{width:100%;height:100%;display:block}
+.heroimg{display:block;width:100%;border-radius:14px;aspect-ratio:900/700;object-fit:cover}
+/* form */
+.quote{position:relative;margin:-60px 10px 0;background:#fff;border-radius:16px;box-shadow:0 14px 40px rgba(20,36,64,.18);border:1px solid var(--line);padding:18px 16px 16px;scroll-margin-top:76px}
+.qhead{text-align:center}
+.qhead h2{font-size:22px;margin:0;color:var(--navy);line-height:1.2}
+.qhead p{margin:2px 0 0;font-size:14px;color:var(--muted)}
+.prog{display:flex;gap:6px;margin:14px 0 4px}.prog i{flex:1;height:6px;border-radius:3px;background:var(--line)}.prog i.on{background:var(--or)}
+.stepn{font-size:12px;font-weight:700;color:var(--or);letter-spacing:.06em;text-transform:uppercase;text-align:center;margin:8px 0 2px}
+.q{font-weight:800;font-size:18px;text-align:center;margin:0 0 12px}
+.step{display:none}.step.on{display:block;animation:fi .25s ease}
+@keyframes fi{from{opacity:0;transform:translateX(12px)}to{opacity:1;transform:none}}
+.tiles{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.tile{border:1.5px solid var(--line);background:#fff;border-radius:12px;padding:12px 8px 10px;font:inherit;font-weight:700;font-size:14.5px;color:var(--ink);cursor:pointer;display:flex;flex-direction:column;align-items:center;gap:6px;transition:.15s}
+.tile svg{width:38px;height:38px}
+.tile:hover,.tile.sel{border-color:var(--or);background:var(--or2)}
+label{display:block;font-size:13px;font-weight:700;margin:0 0 4px}
+input{width:100%;font:inherit;font-size:16px;padding:13px 12px;border:1.5px solid var(--line);border-radius:10px;margin:0 0 10px;background:#fff;color:var(--ink)}
+input:focus{outline:none;border-color:var(--or)}
+.row2{display:grid;grid-template-columns:1fr 120px;gap:8px}
+.q{margin:14px 0 8px!important;font-size:16px!important}
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:8px;margin:0 0 14px}
+.chip{border:1.5px solid var(--line);background:#fff;border-radius:10px;padding:11px 6px;font:inherit;font-weight:700;font-size:14px;color:var(--ink);cursor:pointer}
+.chip.sel{border-color:var(--or);background:var(--or2);color:var(--navy)}
+.btn{display:flex;align-items:center;justify-content:center;gap:8px;width:100%;background:var(--or);color:#fff;border:none;border-radius:12px;padding:16px;font:inherit;font-weight:800;font-size:18px;cursor:pointer;text-decoration:none;box-shadow:0 6px 16px rgba(232,116,42,.35)}
+.btn.navy{background:var(--navy);box-shadow:none}
+.back{background:none;border:none;color:var(--muted);font:inherit;font-size:14px;margin:10px auto 0;display:block;cursor:pointer}
+.fine{font-size:11.5px;color:#8a93a3;margin:10px 0 0;text-align:center;line-height:1.4}
+input.err{border-color:#d93a2b!important;box-shadow:0 0 0 3px rgba(217,58,43,.15)}
+.done{display:none;text-align:center;padding:10px 0}
+.done.on{display:block}
+.done .ck{width:56px;height:56px;border-radius:50%;background:#1f9d55;color:#fff;display:grid;place-items:center;margin:0 auto 10px;font-size:30px;font-weight:800}
+.done h3{margin:0 0 6px;font-size:21px;color:var(--navy)}
+.done p{margin:0;color:var(--muted);font-size:15px}
+.trust{display:flex;justify-content:center;flex-wrap:wrap;gap:6px 16px;margin:16px 0 0;font-size:13.5px;font-weight:600;color:var(--navy)}
+.trust span::before{content:"\2713";color:var(--or);font-weight:800;margin-right:5px}
+/* sections */
+section{padding:40px 0 4px}
+h2.sec{font-size:clamp(26px,7vw,34px);line-height:1.12;letter-spacing:-.02em;margin:0 0 14px;color:var(--navy);text-align:center}
+h2.sec em{font-style:normal;color:var(--or)}
+.pic{display:block;width:100%;border-radius:14px;margin:0 0 16px}
+.reasons{list-style:none;margin:0;padding:0;display:grid;gap:12px}
+.reasons li{display:grid;grid-template-columns:40px 1fr;gap:12px;align-items:start;background:var(--soft);border-radius:12px;padding:14px}
+.reasons .n{width:40px;height:40px;border-radius:50%;background:var(--navy);color:#fff;font-weight:800;display:grid;place-items:center}
+.reasons b{display:block;font-size:17px}
+.reasons p{margin:2px 0 0;font-size:15px;color:var(--muted)}
+.ba{position:relative;border-radius:14px;overflow:hidden;aspect-ratio:900/559;margin:0 0 10px}
+.ba img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.ba .af{clip-path:inset(0 0 0 50%);animation:sl 6s ease-in-out infinite}
+.ba .bar{position:absolute;top:0;bottom:0;left:50%;width:3px;background:#fff;box-shadow:0 0 8px rgba(0,0,0,.4);animation:sb 6s ease-in-out infinite}
+.ba .bar::after{content:"\2194";position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);width:34px;height:34px;border-radius:50%;background:#fff;color:var(--navy);display:grid;place-items:center;font-weight:800;font-size:18px}
+@keyframes sl{0%,100%{clip-path:inset(0 0 0 75%)}50%{clip-path:inset(0 0 0 20%)}}
+@keyframes sb{0%,100%{left:75%}50%{left:20%}}
+.ba .tag{position:absolute;top:10px;font-size:12px;font-weight:800;letter-spacing:.08em;color:#fff;background:rgba(20,36,64,.85);padding:4px 9px;border-radius:6px}
+.ba .tag.l{left:10px}.ba .tag.r{right:10px;background:var(--or)}
+.cap{font-size:14px;color:var(--muted);text-align:center;margin:0 0 14px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin:0 0 6px}
+.two figure{margin:0}.two img{width:100%;border-radius:12px;display:block;aspect-ratio:1/1;object-fit:cover}
+.two figcaption{font-size:13px;color:var(--muted);text-align:center;margin-top:5px}
+.mid{margin:22px 0 0}
+.rev{display:grid;gap:12px}
+.rv{background:var(--soft);border-radius:14px;padding:16px}
+.rv .st{color:var(--gold);letter-spacing:1px}
+.rv p{margin:6px 0 8px;font-size:16px}
+.rv small{display:flex;align-items:center;gap:6px;color:var(--muted);font-size:13px}
+.owner{display:grid;grid-template-columns:110px 1fr;gap:14px;align-items:center;background:var(--navy);color:#fff;border-radius:16px;padding:16px}
+.owner img{width:110px;height:110px;border-radius:50%;object-fit:cover;border:3px solid var(--or)}
+.owner p{margin:0 0 6px;font-size:15.5px;color:#dbe3ef}.owner p b{color:#fff}
+.owner a{color:#fff;font-weight:700}
+.how{list-style:none;padding:0;margin:0;display:grid;gap:10px;counter-reset:h}
+.how li{display:grid;grid-template-columns:34px 1fr;gap:10px;align-items:start}
+.how li::before{counter-increment:h;content:counter(h);width:34px;height:34px;border-radius:50%;background:var(--or);color:#fff;font-weight:800;display:grid;place-items:center}
+.how b{display:block}.how span{font-size:15px;color:var(--muted)}
+details{border-bottom:1px solid var(--line);padding:14px 2px}
+summary{font-weight:700;cursor:pointer;list-style:none;display:flex;justify-content:space-between;gap:10px}
+summary::after{content:"+";color:var(--or);font-weight:800;font-size:20px;line-height:1}
+details[open] summary::after{content:"\2013"}
+details p{margin:8px 0 0;color:var(--muted);font-size:15.5px}
+.final{background:var(--navy);color:#fff;border-radius:18px;padding:26px 18px;text-align:center;margin:36px 0 0}
+.final h2{color:#fff;margin:0 0 6px;font-size:28px;line-height:1.15}
+.final p{color:#c9d3e2;margin:0 0 16px}
+/* Call or text bar (Chad 2026-11-26 11:24pm PT: "put there number on the lander so a lead can just call or text directly") */
+.ctbar{position:fixed;left:0;right:0;bottom:0;z-index:6;display:flex;gap:8px;padding:8px 10px calc(8px + env(safe-area-inset-bottom));background:#fff;border-top:1px solid var(--line);box-shadow:0 -4px 14px rgba(0,0,0,.08)}
+.ctbar a{flex:1;display:flex;align-items:center;justify-content:center;gap:7px;height:46px;border-radius:10px;font-weight:800;font-size:16px;text-decoration:none}
+.ctbar svg{width:17px;height:17px}
+.ctbar .c{background:var(--navy);color:#fff}.ctbar .t{background:var(--or);color:#fff}
+body{padding-bottom:70px}
+footer{text-align:center;font-size:13px;color:var(--muted);padding:26px 0 34px}
+footer nav{margin-top:6px}footer a{color:var(--muted)}
+@media (prefers-reduced-motion:reduce){*{animation:none!important}.ba .af{clip-path:inset(0 0 0 50%)}}
+.guar{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.guar>div{border:1.5px solid var(--line);border-radius:14px;padding:14px 12px;text-align:center}
+.guar svg{width:40px;height:40px;display:block;margin:0 auto 6px}
+.guar b{display:block;font-size:15.5px;color:var(--navy);line-height:1.25}
+.guar p{margin:4px 0 0;font-size:13.5px;color:var(--muted)}
+@media (max-width:360px){.guar{grid-template-columns:1fr}}
+
+/* Chad 2026-11-27 2:00pm PT: buttons lift with a shadow on hover */
+.btn,.chip,.ctbar a{transition:transform .15s,box-shadow .15s,filter .15s;cursor:pointer}
+.btn:hover,.ctbar a:hover{transform:translateY(-2px);box-shadow:0 10px 24px rgba(232,116,42,.35);filter:brightness(1.06)}
+.chip:hover{transform:translateY(-1px);box-shadow:0 6px 16px rgba(17,23,38,.15)}
+.btn:active,.chip:active,.ctbar a:active{transform:none;box-shadow:none}
+
+/* Chad 2026-11-27 2:12pm PT: no one-word lines on phones */
+h1,h2,h3,summary{text-wrap:balance}
+p,li,figcaption,.t,.no,.lede{text-wrap:pretty}
+</style>
+</head>
+<body>
+<header><div class="wrap">
+ <a class="logo" href="#"><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M4 22 20 8l16 14" fill="none" stroke="#142440" stroke-width="4" stroke-linejoin="round" stroke-linecap="round"/><path d="M11 27c5-1 9-4 12-9 1 4 4 6 8 6-4 3-9 4-14 4z" fill="#e8742a"/></svg><span><b>KESTREL</b><i>ROOFING</i></span></a>
+ <a class="tel" href="tel:+19375550142"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>(937)&nbsp;555-0142</a>
+</div></header>
+
+<main class="wrap">
+ <h1>Free Roof Quote.<br><em>No Sales Pitch.</em></h1>
+ <p class="dek">Leaks, storm damage or a full new roof.<b>Your price locked in writing.<br>Dave, the owner, checks every roof.</b></p>
+ <div class="stars"><span class="g" aria-label="Google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span><span>&#9733;&#9733;&#9733;&#9733;&#9733;</span>4.9 from 180+ Google reviews</div>
+ <img class="heroimg" src="https://static.ll-assets.com/variants/unpublished/f1504f942838c7ed1cb7012e2436c9ab/img/hero.jpg" alt="Dave, owner of Kestrel Roofing, beside his work truck">
+
+ <form class="quote" id="quote" onsubmit="return false">
+  <div class="qhead"><h2>Get Your Free Roof Quote</h2><p>One short form. About 30 seconds.</p></div>
+  <div id="fields">
+   <p class="q">What does your roof need?</p>
+   <div class="chips" role="radiogroup" aria-label="What does your roof need?">
+    <button type="button" class="chip" role="radio">Full replacement</button><button type="button" class="chip" role="radio">Leak or repair</button><button type="button" class="chip" role="radio">Storm or hail damage</button><button type="button" class="chip" role="radio">Not sure yet</button>
+   </div>
+   <div class="row2"><div><label for="fn">First name</label><input id="fn" required autocomplete="given-name" placeholder="First name"></div><div><label for="zip">ZIP</label><input id="zip" required maxlength="5" inputmode="numeric" autocomplete="postal-code" placeholder="45402"></div></div>
+   <label for="addr">Street address</label><input id="addr" required autocomplete="street-address" placeholder="123 Main St">
+   <label for="ph">Mobile phone</label><input id="ph" required type="tel" autocomplete="tel" placeholder="(937) 555-0100">
+   <button type="button" class="btn" id="send">Get My Free Quote &rarr;</button>
+   <p class="fine">By tapping, you agree Kestrel Roofing may call or text you about your quote, including by automated means. Consent is not a condition of purchase. Msg &amp; data rates may apply.</p>
+  </div>
+  <div class="done" id="done"><div class="ck">&#10003;</div><h3>Got it<span id="nm"></span>!</h3><p>We&#x27;ll call or text you today to set up your free roof check.<br>Questions sooner? Call or text (937)&nbsp;555-0142.</p></div>
+ </form>
+ <div class="trust"><span>Licensed &amp; insured</span><span>Price-lock guarantee</span><span>Most roofs done in 1 day</span></div>
+
+ <section>
+  <h2 class="sec">3 Reasons Our Roofs<br><em>Cost Less</em></h2>
+  <img class="pic" src="https://static.ll-assets.com/variants/unpublished/f1504f942838c7ed1cb7012e2436c9ab/img/crew.jpg" alt="Kestrel Roofing crew unloading at a Dayton home" loading="lazy" decoding="async">
+  <ul class="reasons">
+   <li><span class="n">1</span><div><b>No commissioned salesman</b><p>The person who quotes your roof works on our crew.<br>No sales commission in your price.</p></div></li>
+   <li><span class="n">2</span><div><b>Our own crews</b><p>Kestrel crews do every roof.<br>No hired-out subcontractor markup.</p></div></li>
+   <li><span class="n">3</span><div><b>Most roofs done in 1 day</b><p>Old roof off, new roof on, yard cleaned.<br>Fewer labor hours on your bill.</p></div></li>
+  </ul>
+ </section>
+
+ <section>
+  <h2 class="sec">Recent Roofs <em>Near Dayton</em></h2>
+  <div class="ba"><img src="https://static.ll-assets.com/variants/unpublished/f1504f942838c7ed1cb7012e2436c9ab/img/before.jpg" alt="Roof before replacement, with a tarp on it" loading="lazy" decoding="async"><img class="af" src="https://static.ll-assets.com/variants/unpublished/f1504f942838c7ed1cb7012e2436c9ab/img/after.jpg" alt="Same house after a new Kestrel roof" loading="lazy" decoding="async"><span class="bar"></span><span class="tag l">BEFORE</span><span class="tag r">AFTER</span></div>
+  <p class="cap">Kettering: tarped, leaking roof to new architectural shingles in 1 day.</p>
+  <div class="two">
+   <figure><img src="https://static.ll-assets.com/variants/unpublished/f1504f942838c7ed1cb7012e2436c9ab/img/tearoff.jpg" alt="Crew tearing off an old roof" loading="lazy" decoding="async"><figcaption>Tear-off, Centerville</figcaption></figure>
+   <figure><img src="https://static.ll-assets.com/variants/unpublished/f1504f942838c7ed1cb7012e2436c9ab/img/install.jpg" alt="Kestrel roofer installing new shingles" loading="lazy" decoding="async"><figcaption>New shingles, Beavercreek</figcaption></figure>
+  </div>
+  <a class="btn mid" href="#quote">Get My Free Roof Quote &rarr;</a>
+ </section>
+
+ <section>
+  <h2 class="sec">What Dayton<br>Homeowners Say</h2>
+  <div class="rev">
+   <div class="rv"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"Dave came out the same afternoon. His price was lower than the two big companies, and they were done by 4pm."</p><small><span class="g" aria-label="Google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>Linda M. · Kettering</small></div>
+   <div class="rv"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"No salesman at my kitchen table. Dave walked the roof, showed me photos, and gave me one fair price."</p><small><span class="g" aria-label="Google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>Greg P. · Centerville</small></div>
+   <div class="rv"><div class="st">&#9733;&#9733;&#9733;&#9733;&#9733;</div><p>"They met our insurance adjuster and handled the hail claim. Cleanest yard I've seen after a roof."</p><small><span class="g" aria-label="Google"><svg viewBox="0 0 48 48" aria-hidden="true"><path fill="#EA4335" d="M24 9.5c3.54 0 6.71 1.22 9.21 3.6l6.85-6.85C35.9 2.38 30.47 0 24 0 14.62 0 6.51 5.38 2.56 13.22l7.98 6.19C12.43 13.72 17.74 9.5 24 9.5z"/><path fill="#4285F4" d="M46.98 24.55c0-1.57-.15-3.09-.38-4.55H24v9.02h12.94c-.58 2.96-2.26 5.48-4.78 7.18l7.73 6c4.51-4.18 7.09-10.36 7.09-17.65z"/><path fill="#FBBC05" d="M10.53 28.59c-.48-1.45-.76-2.99-.76-4.59s.27-3.14.76-4.59l-7.98-6.19C.92 16.46 0 20.12 0 24c0 3.88.92 7.54 2.56 10.78l7.97-6.19z"/><path fill="#34A853" d="M24 48c6.48 0 11.93-2.13 15.89-5.81l-7.73-6c-2.15 1.45-4.92 2.3-8.16 2.3-6.26 0-11.57-4.22-13.47-9.91l-7.98 6.19C6.51 42.62 14.62 48 24 48z"/></svg></span>Tanya R. · Beavercreek</small></div>
+  </div>
+ </section>
+
+ <section>
+  <h2 class="sec">Our <em>Guarantees</em></h2>
+  <div class="guar">
+   <div><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M20 4 6 9v10c0 9 6 15 14 18 8-3 14-9 14-18V9z" fill="#fdeee3" stroke="#142440" stroke-width="2.5"/><path d="M14 20l4 4 8-9" fill="none" stroke="#e8742a" stroke-width="3" stroke-linecap="round" stroke-linejoin="round"/></svg><b>Price-lock guarantee</b><p>The price in your quote is the price you pay.<br>No surprise add-ons on install day.</p></div>
+   <div><svg viewBox="0 0 40 40" aria-hidden="true"><circle cx="20" cy="20" r="15" fill="#fdeee3" stroke="#142440" stroke-width="2.5"/><path d="M20 11v9l6 4" fill="none" stroke="#e8742a" stroke-width="3" stroke-linecap="round"/></svg><b>10-year workmanship warranty</b><p>If our install leaks, we fix it free.<br>On top of the lifetime shingle warranty.</p></div>
+   <div><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M6 30h28M10 30V16l10-8 10 8v14" fill="#fdeee3" stroke="#142440" stroke-width="2.5" stroke-linejoin="round"/><circle cx="29" cy="11" r="6" fill="#e8742a"/><path d="M26.5 11l1.8 1.8 3.2-3.4" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round"/></svg><b>Clean-yard promise</b><p>We sweep every nail with a magnet.<br>Your yard looks like we were never there.</p></div>
+   <div><svg viewBox="0 0 40 40" aria-hidden="true"><path d="M8 10h24v16H18l-7 6v-6H8z" fill="#fdeee3" stroke="#142440" stroke-width="2.5" stroke-linejoin="round"/><path d="M15 18h10" stroke="#e8742a" stroke-width="3" stroke-linecap="round"/></svg><b>No-pressure promise</b><p>No salesman at your kitchen table.<br>One written price. You decide.</p></div>
+  </div>
+ </section>
+
+ <section>
+  <h2 class="sec">Meet Dave, <em>The Owner</em></h2>
+  <div class="owner"><img src="https://static.ll-assets.com/variants/unpublished/f1504f942838c7ed1cb7012e2436c9ab/img/owner.jpg" alt="Dave, owner of Kestrel Roofing" loading="lazy" decoding="async"><div><p><b>I started Kestrel in 2009 with one truck.</b></p><p>I still look at every roof before we quote it.</p><p>Rather talk first? Call or text me: <a href="tel:+19375550142">(937)&nbsp;555-0142</a></p></div></div>
+ </section>
+
+ <section>
+  <h2 class="sec">How Your Quote Works</h2>
+  <img class="pic" src="https://static.ll-assets.com/variants/unpublished/f1504f942838c7ed1cb7012e2436c9ab/img/porch.jpg" alt="Kestrel roofer going over a quote with homeowners on their porch" loading="lazy" decoding="async">
+  <ol class="how">
+   <li><div><b>Fill in the short form</b><span>About 30 seconds, right on this page.</span></div></li>
+   <li><div><b>We call or text to set a time</b><span>Dave walks your roof and shows you photos of what he finds.</span></div></li>
+   <li><div><b>You get one written price</b><span>Locked in writing. No pressure to decide on the spot.</span></div></li>
+  </ol>
+ </section>
+
+ <section>
+  <h2 class="sec">Questions<br>Homeowners Ask</h2>
+  <details><summary>Do I have to sit through a sales pitch?</summary><p>No. Dave walks the roof, shows you photos and gives you one written price.<br>No pressure to decide on the spot.</p></details>
+  <details><summary>Do you work with insurance claims?</summary><p>Yes. We meet your adjuster and walk the roof with them.</p></details>
+  <details><summary>Do you offer financing?</summary><p>Yes, with monthly payment options.<br>Ask when we text your quote.</p></details>
+  <details><summary>How long does a new roof take?</summary><p>Most roofs are done in 1 day, yard cleanup included.</p></details>
+ </section>
+
+ <div class="final">
+  <h2>See What Your New Roof Costs</h2>
+  <p>One short form.<br>We&#x27;ll call or text to set up your free roof check.</p>
+  <a class="btn" href="#quote">Get My Free Roof Quote &rarr;</a>
+ </div>
+</main>
+<footer>Kestrel Roofing Co. · Dayton, OH<nav><a href="#">Privacy</a> · <a href="#">Terms</a> · <a href="#">Contact</a></nav></footer>
+
+<script>
+(function(){
+ var chips=document.querySelectorAll('.chip');
+ chips.forEach(function(c){c.addEventListener('click',function(){chips.forEach(function(x){x.classList.remove('sel');x.setAttribute('aria-checked','false')});c.classList.add('sel');c.setAttribute('aria-checked','true')})});
+ document.getElementById('send').addEventListener('click',function(){var bad=null;[['fn',function(x){return x.length>0}],['zip',function(x){return /^\d{5}$/.test(x)}],['addr',function(x){return x.length>3}],['ph',function(x){return x.replace(/\D/g,'').length>=10}]].forEach(function(f){var el=document.getElementById(f[0]);var ok=f[1](el.value.trim());el.classList.toggle('err',!ok);if(!ok&&!bad)bad=el});if(bad){bad.focus();return}var n=document.getElementById('fn').value.trim();document.getElementById('nm').textContent=n?', '+n:'';document.getElementById('fields').style.display='none';document.querySelector('.qhead').style.display='none';document.getElementById('done').classList.add('on')});
+})();
+</script>
+<div class="ctbar"><a class="c" href="tel:+19375550142"><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M6.6 10.8a15.1 15.1 0 0 0 6.6 6.6l2.2-2.2a1 1 0 0 1 1-.25 11.4 11.4 0 0 0 3.6.57 1 1 0 0 1 1 1V20a1 1 0 0 1-1 1A17 17 0 0 1 3 4a1 1 0 0 1 1-1h3.5a1 1 0 0 1 1 1c0 1.25.2 2.45.57 3.57a1 1 0 0 1-.25 1z"/></svg>Call</a><a class="t" href="sms:+19375550142?&amp;body=Hi%2C%20I%27d%20like%20a%20quote%20on%20my%20roof."><svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M4 4h16a2 2 0 0 1 2 2v10a2 2 0 0 1-2 2H8l-4 4V6a2 2 0 0 1 2-2z"/></svg>Text Us</a></div>
+</body>
+</html>
